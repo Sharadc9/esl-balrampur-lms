@@ -1,0 +1,2859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESL Balrampur — Start here, speak anywhere...</title>
+<meta name="description" content="English speaking, interview skills, kids English and grammar courses from ESL Balrampur. Watch free lessons on YouTube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16302B;
+    --ink-soft:#1F4A40;
+    --marigold:#E8A33D;
+    --marigold-deep:#C97F1E;
+    --paper:#FBF7EE;
+    --paper-line:#E4DCC8;
+    --charcoal:#22282B;
+    --chalk:#F3EFE2;
+    --green-accent:#4C8C74;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans',sans-serif;
+    color:var(--charcoal);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.08;letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    border-bottom:1px solid rgba(243,239,226,0.12);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:var(--chalk);}
+  .brand-mark{
+    width:34px;height:34px;border-radius:8px;background:var(--marigold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:18px;
+    flex-shrink:0;
+  }
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{
+    color:var(--chalk);opacity:0.82;font-size:14.5px;font-weight:500;
+    transition:opacity .15s ease;
+  }
+  .nav-links a:hover{opacity:1;}
+  .nav-links a:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--marigold);outline-offset:3px;border-radius:4px;
+  }
+  .nav-cta{
+    background:var(--marigold);color:var(--ink)!important;
+    padding:9px 18px;border-radius:100px;font-weight:600;font-size:14px;
+  }
+  .nav-toggle{display:none;background:none;border:none;color:var(--chalk);font-size:26px;cursor:pointer;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--ink);flex-direction:column;align-items:flex-start;
+      padding:8px 24px 22px;gap:16px;
+      display:none;
+      border-bottom:1px solid rgba(243,239,226,0.12);
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--chalk);
+    padding:72px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle at 1px 1px, rgba(243,239,226,0.06) 1px, transparent 1px);
+    background-size:22px 22px;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;max-width:1120px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.08em;
+    color:var(--marigold);text-transform:uppercase;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;background:var(--marigold);border-radius:2px;display:inline-block;}
+  .hero h1{
+    font-size:clamp(38px,7vw,68px);
+    max-width:720px;
+  }
+  .hero h1 .accent{color:var(--marigold);position:relative;display:inline-block;}
+  .hero h1 .accent svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px;}
+  .hero p.lede{
+    font-size:18px;max-width:520px;margin-top:22px;color:rgba(243,239,226,0.82);
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 24px;border-radius:100px;font-weight:600;font-size:15px;
+    border:1.5px solid transparent;transition:transform .15s ease, background .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--marigold);color:var(--ink);}
+  .btn-primary:hover{background:#f0b458;}
+  .btn-ghost{border-color:rgba(243,239,226,0.35);color:var(--chalk);}
+  .btn-ghost:hover{background:rgba(243,239,226,0.08);}
+
+  /* caption strip — signature element */
+  .caption-strip{
+    margin-top:52px;
+    background:rgba(0,0,0,0.22);
+    border:1px solid rgba(243,239,226,0.14);
+    border-radius:10px;
+    padding:20px 24px;
+    max-width:620px;
+    position:relative;
+  }
+  .caption-label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(243,239,226,0.45);
+    text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .rec-dot{width:7px;height:7px;border-radius:50%;background:#e8574d;display:inline-block;animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  .caption-en{font-size:19px;font-weight:600;color:var(--chalk);min-height:28px;}
+  .caption-hi{font-size:15px;color:var(--marigold);margin-top:5px;min-height:22px;}
+  .caption-cursor{display:inline-block;width:2px;height:18px;background:var(--marigold);margin-left:2px;animation:blink 1s step-end infinite;vertical-align:middle;}
+  @keyframes blink{50%{opacity:0;}}
+
+  @media (prefers-reduced-motion: reduce){
+    .rec-dot, .caption-cursor{animation:none;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:600px;margin-bottom:48px;}
+  .section-head .eyebrow{color:var(--marigold-deep);}
+  .section-head .eyebrow::before{background:var(--marigold-deep);}
+  .section-head h2{font-size:clamp(28px,4vw,40px);color:var(--ink);}
+  .section-head p{margin-top:14px;font-size:16.5px;color:#4A5450;}
+
+  /* ---------- COURSES ---------- */
+  .courses{background:var(--paper);}
+  .course-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+  }
+  .course-card{
+    background:var(--chalk);
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:26px;
+    display:flex;flex-direction:column;gap:14px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .course-card:hover{border-color:var(--marigold-deep);transform:translateY(-2px);}
+  .course-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .course-code{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--marigold-deep);
+    background:rgba(200,127,30,0.1);padding:4px 9px;border-radius:5px;font-weight:700;
+    letter-spacing:0.02em;white-space:nowrap;
+  }
+  .course-level{font-size:12px;color:#7C8781;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;}
+  .course-card h3{font-size:21px;color:var(--ink);font-weight:600;}
+  .course-card p{font-size:14.5px;color:#565F5A;flex-grow:1;}
+  .course-meta{
+    display:flex;gap:16px;font-size:13px;color:#7C8781;
+    padding-top:14px;border-top:1px dashed var(--paper-line);font-family:'JetBrains Mono',monospace;
+  }
+  .course-resource{
+    font-size:13.5px;font-weight:600;color:var(--marigold-deep);
+    display:inline-flex;align-items:center;gap:5px;margin-top:2px;
+  }
+  .course-resource:hover{text-decoration:underline;}
+
+  /* ---------- WORD OF THE DAY + PROGRESS STRIP ---------- */
+  .wotd-strip{background:var(--chalk);border-bottom:1px solid var(--paper-line);padding:28px 0;}
+  .wotd-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;}
+  .wotd-card, .progress-card{
+    background:var(--paper);border:1px solid var(--paper-line);border-radius:14px;
+    padding:20px 24px;
+  }
+  .wotd-card .tiny-label, .progress-card .tiny-label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--marigold-deep);
+    text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:8px;display:block;
+  }
+  .wotd-word{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--ink);}
+  .wotd-hindi{font-size:15px;color:var(--marigold-deep);font-weight:600;margin-top:2px;}
+  .wotd-example{font-size:14px;color:#565F5A;margin-top:8px;font-style:italic;}
+  .progress-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:4px;}
+  .progress-stat{display:flex;align-items:center;gap:8px;}
+  .progress-stat .num{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--ink);}
+  .progress-stat .label{font-size:12.5px;color:#7C8781;}
+  @media (max-width:760px){ .wotd-grid{grid-template-columns:1fr;} }
+
+  /* ---------- SPEAK & LISTEN STUDIO ---------- */
+  .speak-studio{background:var(--ink);color:var(--chalk);}
+  .speak-studio .section-head{margin-left:auto;margin-right:auto;text-align:center;max-width:560px;}
+  .speak-studio .section-head h2{color:var(--chalk);}
+  .speak-studio .section-head p{color:rgba(243,239,226,0.72);}
+  .speak-studio .eyebrow{justify-content:center;}
+  .speak-studio .lesson-tabs{justify-content:center;}
+  .speak-studio .lesson-tab{
+    background:rgba(243,239,226,0.06);border-color:rgba(243,239,226,0.2);color:var(--chalk);
+  }
+  .speak-studio .lesson-tab.active{background:var(--marigold);border-color:var(--marigold);color:var(--ink);}
+  .speak-card{
+    max-width:600px;margin:0 auto;background:rgba(243,239,226,0.05);
+    border:1px solid rgba(243,239,226,0.16);border-radius:18px;padding:36px;text-align:center;
+  }
+  .speak-sentence{
+    font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--chalk);
+    margin-bottom:26px;min-height:64px;display:flex;align-items:center;justify-content:center;
+  }
+  .speak-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .speak-btn{
+    display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:100px;
+    font-weight:600;font-size:14.5px;border:1.5px solid rgba(243,239,226,0.3);
+    background:transparent;color:var(--chalk);cursor:pointer;transition:background .15s ease;
+  }
+  .speak-btn:hover{background:rgba(243,239,226,0.08);}
+  .speak-btn.recording{background:#c85a4a;border-color:#c85a4a;}
+  .speak-feedback{
+    margin-top:20px;font-size:15px;padding:14px 16px;border-radius:10px;
+    background:rgba(232,163,61,0.1);color:var(--chalk);display:none;min-height:20px;
+  }
+  .speak-feedback.show{display:block;}
+  .speak-next{margin-top:20px;}
+  .speak-support-note{font-size:12.5px;color:rgba(243,239,226,0.5);margin-top:18px;}
+
+  /* ---------- FLASHCARDS ---------- */
+  .flashcards{background:var(--paper);}
+  .flash-wrap{max-width:420px;margin:0 auto;}
+  .flash-card{
+    width:100%;height:220px;perspective:1200px;cursor:pointer;margin-bottom:20px;
+  }
+  .flash-inner{
+    position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;
+  }
+  .flash-card.flipped .flash-inner{transform:rotateY(180deg);}
+  .flash-face{
+    position:absolute;inset:0;backface-visibility:hidden;
+    border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:20px;text-align:center;border:1px solid var(--paper-line);
+  }
+  .flash-front{background:var(--chalk);}
+  .flash-front .flash-word{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--ink);}
+  .flash-front .flash-hint{font-size:12.5px;color:#7C8781;margin-top:10px;font-family:'JetBrains Mono',monospace;}
+  .flash-back{background:var(--ink);color:var(--chalk);transform:rotateY(180deg);}
+  .flash-back .flash-hindi{font-size:22px;font-weight:700;color:var(--marigold);}
+  .flash-back .flash-ex{font-size:14px;color:rgba(243,239,226,0.8);margin-top:10px;font-style:italic;}
+  .flash-nav{display:flex;justify-content:center;gap:14px;align-items:center;}
+  .flash-nav .qnum{font-family:'JetBrains Mono',monospace;font-size:13px;color:#7C8781;}
+
+  /* ---------- PRACTICE QUIZ ---------- */
+  .practice{background:var(--chalk);border-top:1px solid var(--paper-line);border-bottom:1px solid var(--paper-line);}
+  .quiz-card{
+    max-width:640px;margin:0 auto;
+    background:var(--paper);border:1px solid var(--paper-line);border-radius:18px;
+    padding:36px;position:relative;
+  }
+  .quiz-progress{
+    display:flex;gap:6px;margin-bottom:24px;
+  }
+  .quiz-progress .seg{flex:1;height:5px;border-radius:3px;background:var(--paper-line);overflow:hidden;}
+  .quiz-progress .seg.done{background:var(--marigold-deep);}
+  .quiz-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .quiz-meta .qnum{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--marigold-deep);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+  .quiz-meta .qscore{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#7C8781;}
+  .quiz-question{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--ink);margin:16px 0 22px;min-height:60px;}
+  .quiz-options{display:flex;flex-direction:column;gap:10px;}
+  .quiz-option{
+    text-align:left;padding:14px 18px;border-radius:10px;
+    border:1.5px solid var(--paper-line);background:var(--chalk);
+    font-size:15.5px;font-weight:500;color:var(--charcoal);cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .quiz-option:hover{border-color:var(--marigold-deep);}
+  .quiz-option.correct{border-color:#3f8f5f;background:rgba(63,143,95,0.12);}
+  .quiz-option.wrong{border-color:#c85a4a;background:rgba(200,90,74,0.1);}
+  .quiz-option:disabled{cursor:default;}
+  .quiz-feedback{
+    margin-top:16px;font-size:14.5px;padding:12px 14px;border-radius:8px;
+    background:rgba(76,140,116,0.1);color:var(--ink-soft);display:none;
+  }
+  .quiz-feedback.show{display:block;}
+  .quiz-next{
+    margin-top:20px;display:none;
+  }
+  .quiz-next.show{display:inline-flex;}
+  .quiz-result{display:none;text-align:center;}
+  .quiz-result.show{display:block;}
+  .quiz-result .score-big{font-family:'Fraunces',serif;font-size:48px;color:var(--marigold-deep);font-weight:700;}
+  .quiz-result p{color:#4A5450;margin:10px 0 24px;font-size:15.5px;}
+  .quiz-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .quiz-live{display:block;}
+  .quiz-live.hide{display:none;}
+
+  /* ---------- FREE RESOURCES (blog) ---------- */
+  .resources{background:var(--paper);}
+  .resource-featured{
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+    background:var(--chalk);border:1px solid var(--paper-line);border-radius:18px;
+    padding:36px;margin-bottom:24px;
+  }
+  .resource-featured .tag{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--marigold-deep);
+    text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:10px;display:block;
+  }
+  .resource-featured h3{font-size:26px;color:var(--ink);margin-bottom:12px;}
+  .resource-featured p{font-size:15px;color:#565F5A;margin-bottom:20px;}
+  .resource-featured img{border-radius:12px;width:100%;height:220px;object-fit:cover;}
+  .resource-chips{display:flex;flex-wrap:wrap;gap:12px;}
+  .resource-chip{
+    padding:12px 20px;border-radius:100px;background:var(--chalk);
+    border:1.5px solid var(--paper-line);font-size:14.5px;font-weight:600;color:var(--ink);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .resource-chip:hover{border-color:var(--marigold-deep);background:rgba(200,127,30,0.06);}
+
+  @media (max-width:760px){
+    .resource-featured{grid-template-columns:1fr;}
+    .resource-featured img{order:-1;height:180px;}
+  }
+
+  /* ---------- READING TEST ---------- */
+  .reading-test{background:var(--ink);color:var(--chalk);}
+  .reading-test .section-head{margin-left:auto;margin-right:auto;text-align:center;max-width:560px;}
+  .reading-test .section-head h2{color:var(--chalk);}
+  .reading-test .section-head p{color:rgba(243,239,226,0.72);}
+  .reading-test .eyebrow{justify-content:center;}
+  .test-card{
+    max-width:640px;margin:0 auto;
+    background:rgba(243,239,226,0.05);border:1px solid rgba(243,239,226,0.16);
+    border-radius:18px;padding:36px;
+  }
+  .test-field{margin-bottom:18px;text-align:left;}
+  .test-field label{
+    display:block;font-size:13px;font-weight:600;color:var(--marigold);
+    margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:0.03em;
+  }
+  .test-field input{
+    width:100%;padding:13px 16px;border-radius:9px;
+    border:1.5px solid rgba(243,239,226,0.2);background:rgba(0,0,0,0.2);
+    color:var(--chalk);font-size:15.5px;font-family:'Work Sans',sans-serif;
+  }
+  .test-field input::placeholder{color:rgba(243,239,226,0.35);}
+  .test-field input:focus{outline:none;border-color:var(--marigold);}
+  .test-error{
+    color:#e8877a;font-size:13px;margin-top:6px;display:none;
+  }
+  .test-error.show{display:block;}
+  .test-note{
+    font-size:13px;color:rgba(243,239,226,0.55);margin-top:16px;text-align:left;line-height:1.5;
+  }
+  .test-passage{
+    text-align:left;background:rgba(0,0,0,0.18);border-radius:12px;padding:22px 24px;
+    margin-bottom:24px;font-size:15px;line-height:1.7;color:rgba(243,239,226,0.9);
+  }
+  .test-passage h4{
+    font-family:'Fraunces',serif;color:var(--marigold);font-size:16px;margin-bottom:10px;
+  }
+  .hide{display:none!important;}
+  .lvl-textarea{
+    width:100%;min-height:120px;padding:14px 16px;border-radius:10px;
+    border:1.5px solid rgba(243,239,226,0.2);background:rgba(0,0,0,0.2);
+    color:var(--chalk);font-family:'Work Sans',sans-serif;font-size:15px;resize:vertical;
+  }
+  .lvl-textarea::placeholder{color:rgba(243,239,226,0.35);}
+  .lvl-textarea:focus{outline:none;border-color:var(--marigold);}
+  .lvl-summary-row{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:22px 0;}
+  .lvl-summary-item{text-align:center;}
+  .lvl-summary-item .icon{font-size:26px;}
+  .lvl-summary-item .lbl{font-size:12px;color:rgba(243,239,226,0.6);margin-top:4px;font-family:'JetBrains Mono',monospace;}
+  .lvl-level-badge{font-family:'Fraunces',serif;font-size:32px;color:var(--marigold);font-weight:700;}
+
+  /* ---------- COURSE LESSONS ---------- */
+  .lessons{background:var(--chalk);}
+  .lesson-tabs{
+    display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center;
+  }
+  .lesson-tab{
+    padding:10px 18px;border-radius:100px;font-size:13.5px;font-weight:600;
+    border:1.5px solid var(--paper-line);background:var(--paper);color:var(--ink);
+    cursor:pointer;transition:all .15s ease;
+  }
+  .lesson-tab.active{background:var(--ink);border-color:var(--ink);color:var(--chalk);}
+  .lesson-layout{
+    display:grid;grid-template-columns:1.5fr 1fr;gap:24px;
+    background:var(--paper);border:1px solid var(--paper-line);border-radius:18px;padding:24px;
+  }
+  .lesson-player{
+    aspect-ratio:16/9;background:var(--ink);border-radius:12px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lesson-player iframe{width:100%;height:100%;border:0;}
+  .lesson-player-empty{color:rgba(243,239,226,0.5);text-align:center;padding:24px;font-size:14px;}
+  .lesson-list{display:flex;flex-direction:column;gap:8px;max-height:380px;overflow-y:auto;}
+  .lesson-item{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;
+    border:1px solid var(--paper-line);background:var(--chalk);cursor:pointer;
+    font-size:14px;font-weight:500;color:var(--charcoal);transition:border-color .15s ease;
+  }
+  .lesson-item:hover{border-color:var(--marigold-deep);}
+  .lesson-item.active{border-color:var(--marigold-deep);background:rgba(200,127,30,0.08);}
+  .lesson-item .lesson-num{
+    width:26px;height:26px;border-radius:50%;background:var(--marigold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .lesson-item.locked .lesson-num{background:var(--paper-line);color:#9AA39D;}
+  .lesson-item.locked{color:#9AA39D;cursor:default;}
+  @media (max-width:820px){ .lesson-layout{grid-template-columns:1fr;} }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{background:var(--paper);}
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .testi-card{
+    background:var(--chalk);border:1px solid var(--paper-line);border-radius:16px;
+    padding:26px;display:flex;flex-direction:column;gap:14px;
+  }
+  .testi-top{display:flex;align-items:center;gap:14px;}
+  .testi-photo{
+    width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    background:var(--paper-line);border:1px solid var(--paper-line);
+  }
+  .testi-photo-placeholder{
+    width:52px;height:52px;border-radius:50%;flex-shrink:0;
+    background:var(--marigold);color:var(--ink);display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:19px;
+  }
+  .testi-name{font-weight:600;color:var(--ink);font-size:15.5px;}
+  .testi-course{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--marigold-deep);
+    text-transform:uppercase;letter-spacing:0.04em;
+  }
+  .testi-quote{font-size:14.5px;color:#4A5450;line-height:1.6;font-style:italic;}
+  .testi-video-btn{
+    align-self:flex-start;font-size:13px;font-weight:600;color:var(--marigold-deep);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .testi-video-btn:hover{text-decoration:underline;}
+  .testi-empty-note{
+    text-align:center;color:#7C8781;font-size:14.5px;padding:30px 20px;
+    background:var(--chalk);border:1px dashed var(--paper-line);border-radius:14px;
+  }
+
+  /* ---------- CHANNEL / WHY ---------- */
+  .channel{background:var(--ink-soft);color:var(--chalk);}
+  .channel-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .channel h2{color:var(--chalk);font-size:clamp(26px,4vw,36px);}
+  .channel .eyebrow{color:var(--marigold);}
+  .channel .eyebrow::before{background:var(--marigold);}
+  .channel-list{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:16px;}
+  .channel-list li{display:flex;gap:12px;font-size:15.5px;color:rgba(243,239,226,0.88);}
+  .channel-list .tick{
+    width:20px;height:20px;border-radius:50%;background:var(--marigold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;
+  }
+  .yt-card{
+    background:var(--ink);border:1px solid rgba(243,239,226,0.14);border-radius:16px;
+    padding:28px;text-align:center;
+  }
+  .yt-play{
+    width:60px;height:60px;border-radius:50%;background:#e8574d;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    color:#fff;font-size:22px;
+  }
+  .yt-card h3{font-family:'Fraunces',serif;font-size:22px;color:var(--chalk);margin-bottom:6px;}
+  .yt-card p{font-size:14px;color:rgba(243,239,226,0.6);margin-bottom:22px;}
+
+  @media (max-width:820px){
+    .channel-grid{grid-template-columns:1fr;gap:36px;}
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--chalk);text-align:center;}
+  .contact .eyebrow{justify-content:center;color:var(--marigold);}
+  .contact .eyebrow::before{background:var(--marigold);}
+  .contact h2{font-size:clamp(30px,5vw,46px);max-width:640px;margin:0 auto;}
+  .contact p.lede{max-width:480px;margin:18px auto 0;color:rgba(243,239,226,0.75);font-size:16.5px;}
+  .contact-cards{
+    display:flex;gap:16px;justify-content:center;margin-top:38px;flex-wrap:wrap;
+  }
+  .contact-card{
+    background:rgba(243,239,226,0.06);border:1px solid rgba(243,239,226,0.16);
+    border-radius:var(--radius);padding:22px 28px;min-width:220px;text-align:left;
+    display:flex;align-items:center;gap:14px;transition:background .15s ease;
+  }
+  .contact-card:hover{background:rgba(243,239,226,0.11);}
+  .contact-icon{
+    width:42px;height:42px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:19px;
+  }
+  .contact-card .num-label{font-size:12px;color:rgba(243,239,226,0.55);text-transform:uppercase;letter-spacing:0.05em;font-family:'JetBrains Mono',monospace;}
+  .contact-card .num{font-size:17px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-top:2px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);border-top:1px solid rgba(243,239,226,0.1);padding:30px 0;}
+  .footer-inner{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    color:rgba(243,239,226,0.55);font-size:13.5px;
+  }
+  .footer-inner strong{color:var(--marigold);font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark">E</span>
+      <span class="brand-name">ESL Balrampur</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#speaklisten">Speak &amp; Listen</a>
+      <a href="#courses">Courses</a>
+      <a href="#flashcards">Flashcards</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#practice">Free Practice</a>
+      <a href="#leveltest">Level Test</a>
+      <a href="https://eslenglishbol.blogspot.com/?m=0" target="_blank" rel="noopener">Blog</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#channel">About</a>
+      <a href="https://www.youtube.com/@ESLBalrampur" target="_blank" rel="noopener">YouTube</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">ESL Balrampur &middot; Free lessons on YouTube</span>
+      <h1>Start here,<br>
+        <span class="accent">speak anywhere&hellip;
+          <svg viewBox="0 0 300 14" preserveAspectRatio="none" fill="none"><path d="M2 9C60 2 240 2 298 9" stroke="#E8A33D" stroke-width="3" stroke-linecap="round"/></svg>
+        </span>
+      </h1>
+      <p class="lede">English speaking courses built for real conversations — at home, in interviews, in school, and in daily life. Learn at your own pace, in your own words.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/919616422712?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20English%20courses" class="btn btn-primary" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a href="https://www.youtube.com/@ESLBalrampur" class="btn btn-ghost" target="_blank" rel="noopener">Watch free lessons &#9654;</a>
+      </div>
+
+      <div class="caption-strip">
+        <div class="caption-label"><span class="rec-dot"></span> Live from a lesson</div>
+        <div class="caption-en" id="capEn"></div>
+        <div class="caption-hi" id="capHi"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wotd-strip">
+    <div class="wrap wotd-grid">
+      <div class="wotd-card">
+        <span class="tiny-label">Word of the day</span>
+        <div class="wotd-word" id="wotdWord"></div>
+        <div class="wotd-hindi" id="wotdHindi"></div>
+        <div class="wotd-example" id="wotdExample"></div>
+      </div>
+      <div class="progress-card">
+        <span class="tiny-label">Your progress</span>
+        <div class="progress-row">
+          <div class="progress-stat">
+            <span class="num" id="statStreak">0</span>
+            <span class="label">day streak &#128293;</span>
+          </div>
+          <div class="progress-stat">
+            <span class="num" id="statPractice">&ndash;</span>
+            <span class="label">best practice score</span>
+          </div>
+          <div class="progress-stat">
+            <span class="num" id="statReading">&ndash;</span>
+            <span class="label">your level test result</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="speak-studio" id="speaklisten">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Listen &amp; speak studio</span>
+        <h2>Hear it. Say it. Get instant feedback.</h2>
+        <p>Tap Listen to hear the sentence spoken aloud, then tap Speak and say it yourself — right in your browser, completely free. Over 800 sentences, from beginner to advanced.</p>
+      </div>
+      <div class="lesson-tabs" id="speakLevelTabs" style="margin-bottom:24px;"></div>
+      <div class="speak-card">
+        <div class="speak-sentence" id="speakSentence"></div>
+        <div class="speak-btns">
+          <button class="speak-btn" id="speakListenBtn">&#128266; Listen</button>
+          <button class="speak-btn" id="speakRecordBtn">&#127908; Speak now</button>
+        </div>
+        <div class="speak-feedback" id="speakFeedback"></div>
+        <div>
+          <button class="btn btn-primary speak-next" id="speakNextBtn" style="display:none;">Next sentence &#8594;</button>
+        </div>
+        <p class="speak-support-note" id="speakSupportNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses" id="courses">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Courses</span>
+        <h2>Pick your starting point</h2>
+        <p>Every course is taught step by step, with plenty of speaking practice — no prior English knowledge needed to begin.</p>
+      </div>
+
+      <div class="course-grid">
+
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-code">EN-01</span>
+            <span class="course-level">Beginner</span>
+          </div>
+          <h3>Spoken English Foundation</h3>
+          <p>For absolute beginners. Build your first words, sentences, and the confidence to speak without fear of mistakes.</p>
+          <div class="course-meta"><span>Small batches</span><span>Speaking-first</span></div>
+          <a class="course-resource" href="https://eslenglishbol.blogspot.com/search/label/Free%20Courses" target="_blank" rel="noopener">Free lessons for this level &#8599;</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-code">EN-02</span>
+            <span class="course-level">Beginner+</span>
+          </div>
+          <h3>Spoken English Basic</h3>
+          <p>Everyday conversations — greetings, shopping, travel, family talk. Practice English you'll actually use daily.</p>
+          <div class="course-meta"><span>Daily practice</span><span>Real dialogues</span></div>
+          <a class="course-resource" href="https://eslenglishbol.blogspot.com/search/label/Speaking%20Task" target="_blank" rel="noopener">Free speaking tasks &#8599;</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-code">EN-03</span>
+            <span class="course-level">Intermediate</span>
+          </div>
+          <h3>Interview Skills</h3>
+          <p>Answer common interview questions with confidence, introduce yourself clearly, and speak professionally under pressure.</p>
+          <div class="course-meta"><span>Mock interviews</span><span>Job-ready</span></div>
+          <a class="course-resource" href="https://eslenglishbol.blogspot.com/2025/10/7-day-english-speaking-crash-course.html?m=0" target="_blank" rel="noopener">Try the 7-day crash course &#8599;</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-code">EN-04</span>
+            <span class="course-level">Kids</span>
+          </div>
+          <h3>Kids English</h3>
+          <p>Simple, fun English lessons for children — rhymes, stories, and games that build a love for the language early.</p>
+          <div class="course-meta"><span>Ages 5&ndash;12</span><span>Playful learning</span></div>
+          <a class="course-resource" href="https://eslenglishbol.blogspot.com/search/label/Listening%20Exercises" target="_blank" rel="noopener">Free listening exercises &#8599;</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-code">EN-05</span>
+            <span class="course-level">Academic</span>
+          </div>
+          <h3>Grammar for Academics</h3>
+          <p>Clear grammar rules for school and college exams, explained simply with plenty of practice questions.</p>
+          <div class="course-meta"><span>Exam-focused</span><span>Rules + practice</span></div>
+          <a class="course-resource" href="https://eslenglishbol.blogspot.com/search/label/Reading%20Comprehension" target="_blank" rel="noopener">Free reading practice &#8599;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="flashcards" id="flashcards">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Flashcards</span>
+        <h2>Flip to learn a new word</h2>
+        <p>Tap the card to reveal the Hindi meaning and an example sentence.</p>
+      </div>
+      <div class="flash-wrap">
+        <div class="flash-card" id="flashCard">
+          <div class="flash-inner">
+            <div class="flash-face flash-front">
+              <div class="flash-word" id="flashWord"></div>
+              <div class="flash-hint">tap to flip</div>
+            </div>
+            <div class="flash-face flash-back">
+              <div class="flash-hindi" id="flashHindi"></div>
+              <div class="flash-ex" id="flashEx"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flash-nav">
+          <button class="btn btn-ghost" id="flashPrev" style="border-color:var(--paper-line);color:var(--ink);">&#8592; Prev</button>
+          <span class="qnum" id="flashCount">1 / 8</span>
+          <button class="btn btn-ghost" id="flashNext" style="border-color:var(--paper-line);color:var(--ink);">Next &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="practice" id="practice">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Free practice</span>
+        <h2>Try a free mini lesson right now</h2>
+        <p>No sign-up needed. Answer 5 quick questions and see how you do — this is a real taste of how our classes work.</p>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-live" id="quizLive">
+          <div class="quiz-progress" id="quizProgress"></div>
+          <div class="quiz-meta">
+            <span class="qnum" id="qNum">Question 1 of 5</span>
+            <span class="qscore" id="qScore">Score: 0</span>
+          </div>
+          <div class="quiz-question" id="qText"></div>
+          <div class="quiz-options" id="qOptions"></div>
+          <div class="quiz-feedback" id="qFeedback"></div>
+          <button class="btn btn-primary quiz-next" id="qNext">Next question &#8594;</button>
+        </div>
+
+        <div class="quiz-result" id="quizResult">
+          <div class="score-big" id="finalScore">0/5</div>
+          <p id="resultText">Nice work! Want free practice like this every day?</p>
+          <div class="quiz-cta-row">
+            <a href="https://wa.me/919616422712?text=Hi%2C%20I%20just%20completed%20the%20free%20practice%20quiz%20on%20your%20website%20and%20want%20to%20know%20more%20about%20your%20courses" class="btn btn-primary" target="_blank" rel="noopener">Continue on WhatsApp</a>
+            <button class="btn btn-ghost" id="qRetry" style="border-color:var(--paper-line);color:var(--ink);">Try again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources" id="resources">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Free resources</span>
+        <h2>More free lessons on our blog</h2>
+        <p>Practice sheets, listening exercises, and reading tasks — updated regularly on the ESL Institute Balrampur blog.</p>
+      </div>
+
+      <a class="resource-featured" href="https://eslenglishbol.blogspot.com/2025/10/7-day-english-speaking-crash-course.html?m=0" target="_blank" rel="noopener">
+        <div>
+          <span class="tag">Featured &middot; Free</span>
+          <h3>7-Day English Speaking Crash Course</h3>
+          <p>Speak English fluently in just 7 days — interactive lessons, vocabulary boost, and real conversation practice, completely free on our blog.</p>
+          <span class="course-resource">Start the crash course &#8599;</span>
+        </div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5BU8PiDq8rE98LlADjus3DxDlo1N-z8XwHIGCRQGbKEHRU3TYXoKMbvzcFgiy6C3_WOJL85bPsGnoaNw-Gsmorhr23Xs-1_Q6cNvGKnr_wwZ8ELfab5OQXDOEWfFUNGGvv5feltp0SMscWQFMwZVD2_CGAhtWyVK1bVWP_hrY5HMnvHPPJmsYNSZheiW7/s1600/ChatGPT%20Image%20Oct%206,%202025,%2012_19_14%20PM.png" alt="7-Day English Speaking Crash Course">
+      </a>
+
+      <div class="resource-chips">
+        <a class="resource-chip" href="https://eslenglishbol.blogspot.com/search/label/Free%20Courses" target="_blank" rel="noopener">Free Courses &#8599;</a>
+        <a class="resource-chip" href="https://eslenglishbol.blogspot.com/search/label/Listening%20Exercises" target="_blank" rel="noopener">Listening Exercises &#8599;</a>
+        <a class="resource-chip" href="https://eslenglishbol.blogspot.com/search/label/Reading%20Comprehension" target="_blank" rel="noopener">Reading Comprehension &#8599;</a>
+        <a class="resource-chip" href="https://eslenglishbol.blogspot.com/search/label/Speaking%20Task" target="_blank" rel="noopener">Speaking Task &#8599;</a>
+        <a class="resource-chip" href="https://eslenglishbol.blogspot.com/?m=0" target="_blank" rel="noopener">Visit the full blog &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lessons" id="lessons">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Course lessons</span>
+        <h2>Watch your course, lesson by lesson</h2>
+        <p>Watch a free preview lesson from any course. The rest unlock once you enroll — tap a locked lesson to message us.</p>
+      </div>
+
+      <div class="lesson-tabs" id="lessonTabs"></div>
+
+      <div class="lesson-layout">
+        <div class="lesson-player" id="lessonPlayer">
+          <div class="lesson-player-empty">Select a lesson to start watching</div>
+        </div>
+        <div class="lesson-list" id="lessonList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reading-test" id="leveltest">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Free level test</span>
+        <h2>Check your English level — free</h2>
+        <p>A quick check covering listening, reading, speaking and writing. Enter your details to unlock — it opens WhatsApp so we can send your personal result.</p>
+      </div>
+
+      <div class="test-card">
+        <div id="lvlGate">
+          <div class="test-field">
+            <label for="lvlName">Full name</label>
+            <input type="text" id="lvlName" placeholder="Enter your name">
+          </div>
+          <div class="test-field">
+            <label for="lvlPhone">WhatsApp number</label>
+            <input type="tel" id="lvlPhone" placeholder="10-digit mobile number" maxlength="10">
+            <div class="test-error" id="lvlError">Please enter your name and a valid 10-digit number.</div>
+          </div>
+          <button class="btn btn-primary" id="lvlUnlock" style="width:100%;justify-content:center;">Unlock free level test</button>
+          <p class="test-note">This opens WhatsApp with your name and number so we can send your personal result — nothing else.</p>
+        </div>
+
+        <div id="lvlLive" class="hide">
+          <div class="quiz-progress" id="lvlProgress"></div>
+          <div class="quiz-meta"><span class="qnum" id="lvlPartLabel">Part 1 of 4 — Listening</span></div>
+
+          <div id="lvlListening" class="lvl-part">
+            <div style="text-align:center;margin-bottom:18px;">
+              <button class="speak-btn" id="lvlPlayAudio" style="border-color:rgba(243,239,226,0.3);color:var(--chalk);">&#128266; Play audio</button>
+            </div>
+            <div class="quiz-question" id="lvlListenQ" style="color:var(--chalk);"></div>
+            <div class="quiz-options" id="lvlListenOpts"></div>
+            <div class="quiz-feedback" id="lvlListenFeedback" style="background:rgba(232,163,61,0.12);color:var(--chalk);"></div>
+          </div>
+
+          <div id="lvlReading" class="lvl-part hide">
+            <div class="test-passage" id="lvlPassage"></div>
+            <div class="quiz-question" id="lvlReadQ" style="color:var(--chalk);"></div>
+            <div class="quiz-options" id="lvlReadOpts"></div>
+            <div class="quiz-feedback" id="lvlReadFeedback" style="background:rgba(232,163,61,0.12);color:var(--chalk);"></div>
+          </div>
+
+          <div id="lvlSpeaking" class="lvl-part hide" style="text-align:center;">
+            <div class="quiz-question" id="lvlSpeakSentence" style="color:var(--chalk);"></div>
+            <div class="speak-btns">
+              <button class="speak-btn" id="lvlListenBtn">&#128266; Listen</button>
+              <button class="speak-btn" id="lvlRecordBtn">&#127908; Speak now</button>
+            </div>
+            <div class="speak-feedback" id="lvlSpeakFeedback"></div>
+          </div>
+
+          <div id="lvlWriting" class="lvl-part hide">
+            <div class="quiz-question" id="lvlWritePrompt" style="color:var(--chalk);"></div>
+            <textarea class="lvl-textarea" id="lvlWriteText" placeholder="Write your answer here..."></textarea>
+            <div class="quiz-feedback" id="lvlWriteFeedback" style="background:rgba(232,163,61,0.12);color:var(--chalk);"></div>
+            <button class="btn btn-primary" id="lvlWriteSubmit" style="margin-top:16px;">Submit writing</button>
+          </div>
+
+          <button class="btn btn-primary quiz-next" id="lvlNext" style="margin-top:20px;">Next part &#8594;</button>
+        </div>
+
+        <div class="quiz-result" id="lvlResult">
+          <div class="lvl-level-badge" id="lvlLevelBadge"></div>
+          <p id="lvlResultText" style="color:rgba(243,239,226,0.75);"></p>
+          <div class="lvl-summary-row" id="lvlSummaryRow"></div>
+          <div class="quiz-cta-row">
+            <button class="btn btn-primary" id="lvlSendReport">Send my report on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">Success stories</span>
+        <h2>What our students say</h2>
+        <p>Real students, real progress — in their own words.</p>
+      </div>
+      <div class="testi-grid" id="testiGrid"></div>
+    </div>
+  </section>
+
+  <section class="channel" id="channel">
+    <div class="wrap channel-grid">
+      <div>
+        <span class="eyebrow">Why ESL Balrampur</span>
+        <h2>Learn from someone who teaches this every single day</h2>
+        <ul class="channel-list">
+          <li><span class="tick">&#10003;</span> Free lessons every week on YouTube — try before you join a course</li>
+          <li><span class="tick">&#10003;</span> Lessons explained in simple English and Hindi, so nothing gets lost</li>
+          <li><span class="tick">&#10003;</span> Small batches with real speaking practice, not just theory</li>
+          <li><span class="tick">&#10003;</span> Courses for every stage — from your very first sentence to interview-ready English</li>
+        </ul>
+      </div>
+      <div class="yt-card">
+        <div class="yt-play">&#9654;</div>
+        <h3>ESL Balrampur</h3>
+        <p>Free English lessons, every week</p>
+        <a href="https://www.youtube.com/@ESLBalrampur" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Subscribe on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Get started</span>
+      <h2>Ready to start speaking?</h2>
+      <p class="lede">Message us on WhatsApp or call to know batch timings, fees, and how to enrol.</p>
+      <div class="contact-cards">
+        <a class="contact-card" href="https://wa.me/919616422712" target="_blank" rel="noopener">
+          <span class="contact-icon">&#9742;</span>
+          <span>
+            <span class="num-label">WhatsApp / Call</span><br>
+            <span class="num">96164 22712</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://wa.me/919140141869" target="_blank" rel="noopener">
+          <span class="contact-icon">&#9742;</span>
+          <span>
+            <span class="num-label">WhatsApp / Call</span><br>
+            <span class="num">91401 41869</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span><strong>ESL Balrampur</strong> — Start here, speak anywhere...</span>
+    <span>&#169; <span id="year"></span> ESL Balrampur. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // caption rotator — mimics live video captions
+  const captions = [
+    { en: "Hello, how are you today?", hi: "नमस्ते, आज आप कैसे हैं?" },
+    { en: "My name is Priya. Nice to meet you.", hi: "मेरा नाम प्रिया है। आपसे मिलकर खुशी हुई।" },
+    { en: "Tell me about yourself.", hi: "अपने बारे में बताइए।" },
+    { en: "I am learning to speak English.", hi: "मैं अंग्रेज़ी बोलना सीख रही हूँ।" },
+    { en: "Can you repeat that, please?", hi: "क्या आप इसे दोहरा सकते हैं?" },
+    { en: "I would like to apply for this job.", hi: "मैं इस नौकरी के लिए आवेदन करना चाहती हूँ।" }
+  ];
+
+  const capEn = document.getElementById('capEn');
+  const capHi = document.getElementById('capHi');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0;
+
+  function typeCaption(text, el, cb) {
+    el.textContent = '';
+    let i = 0;
+    if (reduceMotion) { el.textContent = text; if (cb) cb(); return; }
+    const interval = setInterval(() => {
+      el.textContent = text.slice(0, i + 1);
+      i++;
+      if (i >= text.length) {
+        clearInterval(interval);
+        if (cb) cb();
+      }
+    }, 28);
+  }
+
+  function showCaption() {
+    const c = captions[idx % captions.length];
+    typeCaption(c.en, capEn, () => {
+      typeCaption(c.hi, capHi);
+    });
+    idx++;
+  }
+
+  showCaption();
+  setInterval(showCaption, 4200);
+
+  // ---------- Free practice quiz ----------
+  const quizPool = [
+    {
+      q: "Choose the correct sentence:",
+      options: ["She go to school every day.", "She goes to school every day.", "She going to school every day."],
+      correct: 1,
+      note: "With he / she / it, we add 's' to the verb — 'goes', not 'go'."
+    },
+    {
+      q: "Fill in the blank: \"I ___ from Balrampur.\"",
+      options: ["is", "am", "are"],
+      correct: 1,
+      note: "We use 'am' only with 'I'. Example: I am, you are, she is."
+    },
+    {
+      q: "Which is the correct interview answer to \"Tell me about yourself\"?",
+      options: [
+        "My name is Ravi and I am hard working person.",
+        "My name Ravi, I hard working.",
+        "Ravi my name is very good boy."
+      ],
+      correct: 0,
+      note: "Keep it simple and grammatically complete — that's exactly what we practice in the Interview Skills course."
+    },
+    {
+      q: "Choose the correct question:",
+      options: ["Where you are going?", "Where are you going?", "Where going you are?"],
+      correct: 1,
+      note: "In questions, the helping verb (are/is/do) comes right after the question word: Where + are + you...?"
+    },
+    {
+      q: "Which sentence is in the past tense?",
+      options: ["I eat breakfast at 8 am.", "I will eat breakfast.", "I ate breakfast at 8 am."],
+      correct: 2,
+      note: "'Ate' is the past form of 'eat' — used for something that already happened."
+    },
+    {
+      q: "Choose the correct article: \"She is ___ honest girl.\"",
+      options: ["a", "an", "the"],
+      correct: 1,
+      note: "We use 'an' before words that start with a vowel sound — 'honest' starts with a silent 'h'."
+    },
+    {
+      q: "Which sentence uses the correct preposition?",
+      options: ["I live in Balrampur.", "I live at Balrampur.", "I live on Balrampur."],
+      correct: 0,
+      note: "We use 'in' for cities, towns, and villages: I live in Balrampur."
+    },
+    {
+      q: "Choose the correct plural form:",
+      options: ["Two childs are playing.", "Two children are playing.", "Two childrens are playing."],
+      correct: 1,
+      note: "'Child' has an irregular plural — 'children', not 'childs' or 'childrens'."
+    },
+    {
+      q: "Which is a polite way to ask for something?",
+      options: ["Give me water.", "Can you give me water, please?", "I want water now."],
+      correct: 1,
+      note: "Adding 'Can you... please?' makes a request sound polite and professional."
+    },
+    {
+      q: "Choose the correct sentence for future tense:",
+      options: ["I will call you tomorrow.", "I calling you tomorrow.", "I called you tomorrow."],
+      correct: 0,
+      note: "'Will + base verb' is used to talk about the future: I will call."
+    },
+    {
+      q: "Which sentence has correct word order?",
+      options: ["She a beautiful dress is wearing.", "She is wearing a beautiful dress.", "Wearing she is a beautiful dress."],
+      correct: 1,
+      note: "English follows Subject + Verb + Object order: She is wearing a beautiful dress."
+    },
+    {
+      q: "Choose the correct short answer: \"Do you speak English?\"",
+      options: ["Yes, I speak.", "Yes, I do.", "Yes, I am."],
+      correct: 1,
+      note: "For 'Do' questions, the short answer uses 'do': Yes, I do / No, I don't."
+    },
+    {
+      q: "Which sentence correctly uses 'have to'?",
+      options: ["I have to going market.", "I have to go to the market.", "I has to go market."],
+      correct: 1,
+      note: "'Have to' is followed by the base form of the verb: have to go, have to eat."
+    },
+    {
+      q: "Choose the correct comparative sentence:",
+      options: ["This bag is more bigger than that one.", "This bag is bigger than that one.", "This bag is big than that one."],
+      correct: 1,
+      note: "For short adjectives, just add '-er' — 'bigger', not 'more bigger'."
+    },
+    {
+      q: "Which is the correct way to introduce someone?",
+      options: ["This is my friend, Sunita.", "This my friend Sunita is.", "My friend this is Sunita."],
+      correct: 0,
+      note: "A simple, natural introduction: This is my friend, [name]."
+    },
+    {
+      q: "Choose the correct negative sentence:",
+      options: ["She don't like tea.", "She doesn't like tea.", "She not like tea."],
+      correct: 1,
+      note: "With he / she / it, use 'doesn't' — not 'don't'."
+    },
+    {
+      q: "Which sentence correctly asks about someone's job?",
+      options: ["What you do?", "What do you do?", "What are you do?"],
+      correct: 1,
+      note: "The correct question form is: What do you do? (asking about occupation)"
+    },
+    {
+      q: "Choose the correct sentence using 'because':",
+      options: ["I was late because the bus was delayed.", "I was late because of the bus was delayed.", "I was late, because the bus delayed."],
+      correct: 0,
+      note: "'Because' is followed directly by a full clause: because the bus was delayed."
+    },
+    {
+      q: "Which is the correct way to say thanks in an interview?",
+      options: ["Thanks a lot for this.", "Thank you for this opportunity.", "Thanks, okay bye."],
+      correct: 1,
+      note: "'Thank you for this opportunity' sounds professional and complete — ideal for interviews."
+    },
+    {
+      q: "Choose the correct sentence:",
+      options: ["I am living here since five years.", "I have been living here for five years.", "I living here for five years."],
+      correct: 1,
+      note: "'Have been + verb-ing' with 'for' is used for actions continuing until now: have been living for five years."
+    }
+  ];
+
+  function shuffleArray(arr){
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function pickQuizSet(){
+    return shuffleArray(quizPool).slice(0, 5);
+  }
+
+  let quizBank = pickQuizSet();
+
+  let qIndex = 0;
+  let qScore = 0;
+  let answered = false;
+
+  const quizProgress = document.getElementById('quizProgress');
+  const qNumEl = document.getElementById('qNum');
+  const qScoreEl = document.getElementById('qScore');
+  const qTextEl = document.getElementById('qText');
+  const qOptionsEl = document.getElementById('qOptions');
+  const qFeedbackEl = document.getElementById('qFeedback');
+  const qNextBtn = document.getElementById('qNext');
+  const quizLive = document.getElementById('quizLive');
+  const quizResult = document.getElementById('quizResult');
+  const finalScoreEl = document.getElementById('finalScore');
+  const resultTextEl = document.getElementById('resultText');
+
+  function renderProgress(){
+    quizProgress.innerHTML = '';
+    quizBank.forEach((_, i) => {
+      const seg = document.createElement('div');
+      seg.className = 'seg' + (i < qIndex ? ' done' : '');
+      quizProgress.appendChild(seg);
+    });
+  }
+
+  function loadQuestion(){
+    answered = false;
+    const item = quizBank[qIndex];
+    qNumEl.textContent = `Question ${qIndex + 1} of ${quizBank.length}`;
+    qScoreEl.textContent = `Score: ${qScore}`;
+    qTextEl.textContent = item.q;
+    qFeedbackEl.classList.remove('show');
+    qNextBtn.classList.remove('show');
+    qOptionsEl.innerHTML = '';
+    renderProgress();
+
+    item.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => handleAnswer(i, btn));
+      qOptionsEl.appendChild(btn);
+    });
+  }
+
+  function handleAnswer(i, btn){
+    if (answered) return;
+    answered = true;
+    const item = quizBank[qIndex];
+    const allBtns = qOptionsEl.querySelectorAll('.quiz-option');
+    allBtns.forEach(b => b.disabled = true);
+
+    if (i === item.correct){
+      qScore++;
+      btn.classList.add('correct');
+      qFeedbackEl.textContent = "Correct! " + item.note;
+    } else {
+      btn.classList.add('wrong');
+      allBtns[item.correct].classList.add('correct');
+      qFeedbackEl.textContent = "Not quite. " + item.note;
+    }
+    qScoreEl.textContent = `Score: ${qScore}`;
+    qFeedbackEl.classList.add('show');
+    qNextBtn.classList.add('show');
+  }
+
+  qNextBtn.addEventListener('click', () => {
+    qIndex++;
+    if (qIndex < quizBank.length){
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult(){
+    quizLive.classList.add('hide');
+    quizResult.classList.add('show');
+    finalScoreEl.textContent = `${qScore}/${quizBank.length}`;
+    if (qScore === quizBank.length){
+      resultTextEl.textContent = "Perfect score! You're ready for the next level — let's talk about which course fits you best.";
+    } else if (qScore >= 3){
+      resultTextEl.textContent = "Good job! A little more practice and you'll speak with real confidence.";
+    } else {
+      resultTextEl.textContent = "Great start — everyone begins somewhere. Our Foundation course is built exactly for this.";
+    }
+  }
+
+  document.getElementById('qRetry').addEventListener('click', () => {
+    qIndex = 0; qScore = 0;
+    quizBank = pickQuizSet();
+    quizResult.classList.remove('show');
+    quizLive.classList.remove('hide');
+    loadQuestion();
+  });
+
+  loadQuestion();
+
+  // ---------- Progress tracker (saved in this browser only) ----------
+  function saveProgress(key, score, total){
+    try{
+      localStorage.setItem(key, `${score}/${total}`);
+      renderProgress2();
+    }catch(e){ /* storage unavailable, fail silently */ }
+  }
+
+  function updateStreak(){
+    try{
+      const today = new Date().toDateString();
+      const last = localStorage.getItem('lastVisit');
+      let streak = parseInt(localStorage.getItem('streak') || '0', 10);
+      if (last === today){
+        // already counted today
+      } else {
+        const yesterday = new Date(Date.now() - 86400000).toDateString();
+        streak = (last === yesterday) ? streak + 1 : 1;
+        localStorage.setItem('streak', streak);
+        localStorage.setItem('lastVisit', today);
+      }
+      document.getElementById('statStreak').textContent = streak;
+    }catch(e){
+      document.getElementById('statStreak').textContent = '1';
+    }
+  }
+
+  function renderProgress2(){
+    try{
+      document.getElementById('statPractice').textContent = localStorage.getItem('bestPractice') || '–';
+      document.getElementById('statReading').textContent = localStorage.getItem('lvlLevel') || '–';
+    }catch(e){ /* ignore */ }
+  }
+
+  // hook practice quiz completion into progress tracker
+  const _origShowResult = showResult;
+  showResult = function(){
+    _origShowResult();
+    const current = parseInt((localStorage.getItem('bestPractice') || '0/5').split('/')[0], 10);
+    if (qScore >= current) saveProgress('bestPractice', qScore, quizBank.length);
+  };
+
+  updateStreak();
+  renderProgress2();
+
+  // ---------- Word of the Day ----------
+  const wordBank = [
+    { word: "Confidence", hindi: "आत्मविश्वास", example: "Speak slowly and with confidence." },
+    { word: "Opportunity", hindi: "अवसर", example: "This job is a great opportunity for you." },
+    { word: "Practice", hindi: "अभ्यास", example: "Daily practice makes speaking easier." },
+    { word: "Introduce", hindi: "परिचय देना", example: "Let me introduce myself." },
+    { word: "Achieve", hindi: "हासिल करना", example: "You can achieve fluency with time." },
+    { word: "Improve", hindi: "सुधारना", example: "Reading daily will improve your English." },
+    { word: "Fluent", hindi: "धाराप्रवाह", example: "She speaks fluent English now." },
+    { word: "Encourage", hindi: "प्रोत्साहित करना", example: "Our teachers encourage every student." },
+    { word: "Patience", hindi: "धैर्य", example: "Learning a language needs patience." },
+    { word: "Grateful", hindi: "आभारी", example: "I am grateful for this free class." }
+  ];
+  const dayIndex = Math.floor(Date.now() / 86400000) % wordBank.length;
+  const todaysWord = wordBank[dayIndex];
+  document.getElementById('wotdWord').textContent = todaysWord.word;
+  document.getElementById('wotdHindi').textContent = todaysWord.hindi;
+  document.getElementById('wotdExample').textContent = todaysWord.example;
+
+  // ---------- Speak & Listen Studio ----------
+  const speakPool = [
+    {t:"My name is Ravi.",l:"beginner"},
+    {t:"My name is Sunita.",l:"beginner"},
+    {t:"My name is Amit.",l:"beginner"},
+    {t:"My name is Priya.",l:"beginner"},
+    {t:"My name is Anil.",l:"beginner"},
+    {t:"My name is Meera.",l:"beginner"},
+    {t:"My name is Rahul.",l:"beginner"},
+    {t:"My name is Pooja.",l:"beginner"},
+    {t:"My name is Vikas.",l:"beginner"},
+    {t:"My name is Neha.",l:"beginner"},
+    {t:"My name is Suresh.",l:"beginner"},
+    {t:"My name is Kavita.",l:"beginner"},
+    {t:"My name is Manoj.",l:"beginner"},
+    {t:"My name is Rekha.",l:"beginner"},
+    {t:"My name is Deepak.",l:"beginner"},
+    {t:"My name is Sonia.",l:"beginner"},
+    {t:"My name is Arjun.",l:"beginner"},
+    {t:"My name is Nisha.",l:"beginner"},
+    {t:"My name is Rajesh.",l:"beginner"},
+    {t:"My name is Anita.",l:"beginner"},
+    {t:"This is my mother.",l:"beginner"},
+    {t:"This is my father.",l:"beginner"},
+    {t:"This is my brother.",l:"beginner"},
+    {t:"This is my sister.",l:"beginner"},
+    {t:"This is my grandmother.",l:"beginner"},
+    {t:"This is my grandfather.",l:"beginner"},
+    {t:"This is my uncle.",l:"beginner"},
+    {t:"This is my aunt.",l:"beginner"},
+    {t:"This is my son.",l:"beginner"},
+    {t:"This is my daughter.",l:"beginner"},
+    {t:"This is my friend.",l:"beginner"},
+    {t:"This is my teacher.",l:"beginner"},
+    {t:"This is my neighbour.",l:"beginner"},
+    {t:"This is my cousin.",l:"beginner"},
+    {t:"I like the color red.",l:"beginner"},
+    {t:"I like the color blue.",l:"beginner"},
+    {t:"I like the color green.",l:"beginner"},
+    {t:"I like the color yellow.",l:"beginner"},
+    {t:"I like the color black.",l:"beginner"},
+    {t:"I like the color white.",l:"beginner"},
+    {t:"I like the color orange.",l:"beginner"},
+    {t:"I like the color pink.",l:"beginner"},
+    {t:"I like the color purple.",l:"beginner"},
+    {t:"I like the color brown.",l:"beginner"},
+    {t:"I have a book in my bag.",l:"beginner"},
+    {t:"I have a pen in my bag.",l:"beginner"},
+    {t:"I have a bag in my bag.",l:"beginner"},
+    {t:"I have a phone in my bag.",l:"beginner"},
+    {t:"I have a chair in my bag.",l:"beginner"},
+    {t:"I have a table in my bag.",l:"beginner"},
+    {t:"I have a bicycle in my bag.",l:"beginner"},
+    {t:"I have a umbrella in my bag.",l:"beginner"},
+    {t:"I have a watch in my bag.",l:"beginner"},
+    {t:"I have a key in my bag.",l:"beginner"},
+    {t:"I have a bottle in my bag.",l:"beginner"},
+    {t:"I have a notebook in my bag.",l:"beginner"},
+    {t:"I have a shoes in my bag.",l:"beginner"},
+    {t:"I have a clock in my bag.",l:"beginner"},
+    {t:"I have a lamp in my bag.",l:"beginner"},
+    {t:"I have a fan in my bag.",l:"beginner"},
+    {t:"I have a mirror in my bag.",l:"beginner"},
+    {t:"I have a basket in my bag.",l:"beginner"},
+    {t:"I have a blanket in my bag.",l:"beginner"},
+    {t:"I have a radio in my bag.",l:"beginner"},
+    {t:"She is eating rice.",l:"beginner"},
+    {t:"She is eating dal.",l:"beginner"},
+    {t:"She is eating roti.",l:"beginner"},
+    {t:"She is eating vegetables.",l:"beginner"},
+    {t:"She is eating fruit.",l:"beginner"},
+    {t:"She is eating tea.",l:"beginner"},
+    {t:"She is eating milk.",l:"beginner"},
+    {t:"She is eating mango.",l:"beginner"},
+    {t:"She is eating banana.",l:"beginner"},
+    {t:"She is eating bread.",l:"beginner"},
+    {t:"She is eating eggs.",l:"beginner"},
+    {t:"She is eating fish.",l:"beginner"},
+    {t:"She is eating chicken.",l:"beginner"},
+    {t:"She is eating sweets.",l:"beginner"},
+    {t:"She is eating curry.",l:"beginner"},
+    {t:"She is eating paneer.",l:"beginner"},
+    {t:"She is eating potatoes.",l:"beginner"},
+    {t:"She is eating onions.",l:"beginner"},
+    {t:"She is eating tomatoes.",l:"beginner"},
+    {t:"She is eating spinach.",l:"beginner"},
+    {t:"There is a dog in the field.",l:"beginner"},
+    {t:"There is a cat in the field.",l:"beginner"},
+    {t:"There is a cow in the field.",l:"beginner"},
+    {t:"There is a goat in the field.",l:"beginner"},
+    {t:"There is a bird in the field.",l:"beginner"},
+    {t:"There is a horse in the field.",l:"beginner"},
+    {t:"There is a elephant in the field.",l:"beginner"},
+    {t:"There is a rabbit in the field.",l:"beginner"},
+    {t:"There is a hen in the field.",l:"beginner"},
+    {t:"There is a buffalo in the field.",l:"beginner"},
+    {t:"There is a monkey in the field.",l:"beginner"},
+    {t:"There is a parrot in the field.",l:"beginner"},
+    {t:"There is a duck in the field.",l:"beginner"},
+    {t:"There is a sheep in the field.",l:"beginner"},
+    {t:"There is a peacock in the field.",l:"beginner"},
+    {t:"We are going to the market.",l:"beginner"},
+    {t:"We are going to the school.",l:"beginner"},
+    {t:"We are going to the hospital.",l:"beginner"},
+    {t:"We are going to the temple.",l:"beginner"},
+    {t:"We are going to the park.",l:"beginner"},
+    {t:"We are going to the station.",l:"beginner"},
+    {t:"We are going to the office.",l:"beginner"},
+    {t:"We are going to the village.",l:"beginner"},
+    {t:"We are going to the city.",l:"beginner"},
+    {t:"We are going to the river.",l:"beginner"},
+    {t:"We are going to the farm.",l:"beginner"},
+    {t:"We are going to the shop.",l:"beginner"},
+    {t:"We are going to the bank.",l:"beginner"},
+    {t:"We are going to the post office.",l:"beginner"},
+    {t:"We are going to the bus stop.",l:"beginner"},
+    {t:"We are going to the library.",l:"beginner"},
+    {t:"We are going to the clinic.",l:"beginner"},
+    {t:"We are going to the factory.",l:"beginner"},
+    {t:"We are going to the college.",l:"beginner"},
+    {t:"We are going to the garden.",l:"beginner"},
+    {t:"I am happy today.",l:"beginner"},
+    {t:"I am tired today.",l:"beginner"},
+    {t:"I am hungry today.",l:"beginner"},
+    {t:"I am thirsty today.",l:"beginner"},
+    {t:"I am busy today.",l:"beginner"},
+    {t:"I am free today.",l:"beginner"},
+    {t:"I am sick today.",l:"beginner"},
+    {t:"I am excited today.",l:"beginner"},
+    {t:"I am nervous today.",l:"beginner"},
+    {t:"I am confident today.",l:"beginner"},
+    {t:"I am angry today.",l:"beginner"},
+    {t:"I am sad today.",l:"beginner"},
+    {t:"I am proud today.",l:"beginner"},
+    {t:"I am curious today.",l:"beginner"},
+    {t:"I am confused today.",l:"beginner"},
+    {t:"I am relaxed today.",l:"beginner"},
+    {t:"I am worried today.",l:"beginner"},
+    {t:"I am grateful today.",l:"beginner"},
+    {t:"I am hopeful today.",l:"beginner"},
+    {t:"I am calm today.",l:"beginner"},
+    {t:"He wakes up in the morning.",l:"beginner"},
+    {t:"He wakes up in the afternoon.",l:"beginner"},
+    {t:"He wakes up in the evening.",l:"beginner"},
+    {t:"He wakes up in the night.",l:"beginner"},
+    {t:"He wakes up early today.",l:"beginner"},
+    {t:"He wakes up early tomorrow.",l:"beginner"},
+    {t:"He wakes up early yesterday.",l:"beginner"},
+    {t:"He wakes up early every day.",l:"beginner"},
+    {t:"He wakes up early every week.",l:"beginner"},
+    {t:"He wakes up early every month.",l:"beginner"},
+    {t:"I have one books on the table.",l:"beginner"},
+    {t:"I have two books on the table.",l:"beginner"},
+    {t:"I have three books on the table.",l:"beginner"},
+    {t:"I have four books on the table.",l:"beginner"},
+    {t:"I have five books on the table.",l:"beginner"},
+    {t:"I have six books on the table.",l:"beginner"},
+    {t:"I have seven books on the table.",l:"beginner"},
+    {t:"I have eight books on the table.",l:"beginner"},
+    {t:"I have nine books on the table.",l:"beginner"},
+    {t:"I have ten books on the table.",l:"beginner"},
+    {t:"Please give me the book.",l:"beginner"},
+    {t:"Please give me the pen.",l:"beginner"},
+    {t:"Please give me the bag.",l:"beginner"},
+    {t:"Please give me the phone.",l:"beginner"},
+    {t:"Please give me the chair.",l:"beginner"},
+    {t:"Please give me the table.",l:"beginner"},
+    {t:"Please give me the bicycle.",l:"beginner"},
+    {t:"Please give me the umbrella.",l:"beginner"},
+    {t:"Please give me the watch.",l:"beginner"},
+    {t:"Please give me the key.",l:"beginner"},
+    {t:"Please give me the bottle.",l:"beginner"},
+    {t:"Please give me the notebook.",l:"beginner"},
+    {t:"Please give me the shoes.",l:"beginner"},
+    {t:"Please give me the clock.",l:"beginner"},
+    {t:"Please give me the lamp.",l:"beginner"},
+    {t:"Please give me the fan.",l:"beginner"},
+    {t:"Please give me the mirror.",l:"beginner"},
+    {t:"Please give me the basket.",l:"beginner"},
+    {t:"Please give me the blanket.",l:"beginner"},
+    {t:"Please give me the radio.",l:"beginner"},
+    {t:"The dog is very friendly.",l:"beginner"},
+    {t:"The cat is very friendly.",l:"beginner"},
+    {t:"The cow is very friendly.",l:"beginner"},
+    {t:"The goat is very friendly.",l:"beginner"},
+    {t:"The bird is very friendly.",l:"beginner"},
+    {t:"The horse is very friendly.",l:"beginner"},
+    {t:"The elephant is very friendly.",l:"beginner"},
+    {t:"The rabbit is very friendly.",l:"beginner"},
+    {t:"The hen is very friendly.",l:"beginner"},
+    {t:"The buffalo is very friendly.",l:"beginner"},
+    {t:"The monkey is very friendly.",l:"beginner"},
+    {t:"The parrot is very friendly.",l:"beginner"},
+    {t:"The duck is very friendly.",l:"beginner"},
+    {t:"The sheep is very friendly.",l:"beginner"},
+    {t:"The peacock is very friendly.",l:"beginner"},
+    {t:"We visited the market last week.",l:"beginner"},
+    {t:"We visited the school last week.",l:"beginner"},
+    {t:"We visited the hospital last week.",l:"beginner"},
+    {t:"We visited the temple last week.",l:"beginner"},
+    {t:"We visited the park last week.",l:"beginner"},
+    {t:"We visited the station last week.",l:"beginner"},
+    {t:"We visited the office last week.",l:"beginner"},
+    {t:"We visited the village last week.",l:"beginner"},
+    {t:"We visited the city last week.",l:"beginner"},
+    {t:"We visited the river last week.",l:"beginner"},
+    {t:"We visited the farm last week.",l:"beginner"},
+    {t:"We visited the shop last week.",l:"beginner"},
+    {t:"We visited the bank last week.",l:"beginner"},
+    {t:"We visited the post office last week.",l:"beginner"},
+    {t:"We visited the bus stop last week.",l:"beginner"},
+    {t:"We visited the library last week.",l:"beginner"},
+    {t:"We visited the clinic last week.",l:"beginner"},
+    {t:"We visited the factory last week.",l:"beginner"},
+    {t:"We visited the college last week.",l:"beginner"},
+    {t:"We visited the garden last week.",l:"beginner"},
+    {t:"I feel happy right now.",l:"beginner"},
+    {t:"I feel tired right now.",l:"beginner"},
+    {t:"I feel hungry right now.",l:"beginner"},
+    {t:"I feel thirsty right now.",l:"beginner"},
+    {t:"I feel busy right now.",l:"beginner"},
+    {t:"I feel free right now.",l:"beginner"},
+    {t:"I feel sick right now.",l:"beginner"},
+    {t:"I feel excited right now.",l:"beginner"},
+    {t:"I feel nervous right now.",l:"beginner"},
+    {t:"I feel confident right now.",l:"beginner"},
+    {t:"I feel angry right now.",l:"beginner"},
+    {t:"I feel sad right now.",l:"beginner"},
+    {t:"I feel proud right now.",l:"beginner"},
+    {t:"I feel curious right now.",l:"beginner"},
+    {t:"I feel confused right now.",l:"beginner"},
+    {t:"I feel relaxed right now.",l:"beginner"},
+    {t:"I feel worried right now.",l:"beginner"},
+    {t:"I feel grateful right now.",l:"beginner"},
+    {t:"I feel hopeful right now.",l:"beginner"},
+    {t:"I feel calm right now.",l:"beginner"},
+    {t:"See you in the morning.",l:"beginner"},
+    {t:"See you in the afternoon.",l:"beginner"},
+    {t:"See you in the evening.",l:"beginner"},
+    {t:"See you in the night.",l:"beginner"},
+    {t:"My mother works very hard.",l:"beginner"},
+    {t:"My father works very hard.",l:"beginner"},
+    {t:"My brother works very hard.",l:"beginner"},
+    {t:"My sister works very hard.",l:"beginner"},
+    {t:"My grandmother works very hard.",l:"beginner"},
+    {t:"My grandfather works very hard.",l:"beginner"},
+    {t:"My uncle works very hard.",l:"beginner"},
+    {t:"My aunt works very hard.",l:"beginner"},
+    {t:"My son works very hard.",l:"beginner"},
+    {t:"My daughter works very hard.",l:"beginner"},
+    {t:"My friend works very hard.",l:"beginner"},
+    {t:"My teacher works very hard.",l:"beginner"},
+    {t:"My neighbour works very hard.",l:"beginner"},
+    {t:"My cousin works very hard.",l:"beginner"},
+    {t:"I bought one apple yesterday.",l:"beginner"},
+    {t:"I bought two apples yesterday.",l:"beginner"},
+    {t:"I bought three apples yesterday.",l:"beginner"},
+    {t:"I bought four apples yesterday.",l:"beginner"},
+    {t:"I bought five apples yesterday.",l:"beginner"},
+    {t:"I bought six apples yesterday.",l:"beginner"},
+    {t:"I bought seven apples yesterday.",l:"beginner"},
+    {t:"I bought eight apples yesterday.",l:"beginner"},
+    {t:"I bought nine apples yesterday.",l:"beginner"},
+    {t:"I bought ten apples yesterday.",l:"beginner"},
+    {t:"Do you like red?",l:"beginner"},
+    {t:"Do you like blue?",l:"beginner"},
+    {t:"Do you like green?",l:"beginner"},
+    {t:"Do you like yellow?",l:"beginner"},
+    {t:"Do you like black?",l:"beginner"},
+    {t:"Do you like white?",l:"beginner"},
+    {t:"Do you like orange?",l:"beginner"},
+    {t:"Do you like pink?",l:"beginner"},
+    {t:"Do you like purple?",l:"beginner"},
+    {t:"Do you like brown?",l:"beginner"},
+    {t:"The market is very crowded today.",l:"beginner"},
+    {t:"The school is very crowded today.",l:"beginner"},
+    {t:"The hospital is very crowded today.",l:"beginner"},
+    {t:"The temple is very crowded today.",l:"beginner"},
+    {t:"The park is very crowded today.",l:"beginner"},
+    {t:"The station is very crowded today.",l:"beginner"},
+    {t:"The office is very crowded today.",l:"beginner"},
+    {t:"The village is very crowded today.",l:"beginner"},
+    {t:"The city is very crowded today.",l:"beginner"},
+    {t:"The river is very crowded today.",l:"beginner"},
+    {t:"The farm is very crowded today.",l:"beginner"},
+    {t:"The shop is very crowded today.",l:"beginner"},
+    {t:"The bank is very crowded today.",l:"beginner"},
+    {t:"The post office is very crowded today.",l:"beginner"},
+    {t:"The bus stop is very crowded today.",l:"beginner"},
+    {t:"The library is very crowded today.",l:"beginner"},
+    {t:"The clinic is very crowded today.",l:"beginner"},
+    {t:"The factory is very crowded today.",l:"beginner"},
+    {t:"The college is very crowded today.",l:"beginner"},
+    {t:"The garden is very crowded today.",l:"beginner"},
+    {t:"I will meet Ravi tomorrow.",l:"beginner"},
+    {t:"I will meet Sunita tomorrow.",l:"beginner"},
+    {t:"I will meet Amit tomorrow.",l:"beginner"},
+    {t:"I will meet Priya tomorrow.",l:"beginner"},
+    {t:"I will meet Anil tomorrow.",l:"beginner"},
+    {t:"I will meet Meera tomorrow.",l:"beginner"},
+    {t:"I will meet Rahul tomorrow.",l:"beginner"},
+    {t:"I will meet Pooja tomorrow.",l:"beginner"},
+    {t:"I will meet Vikas tomorrow.",l:"beginner"},
+    {t:"I will meet Neha tomorrow.",l:"beginner"},
+    {t:"I will meet Suresh tomorrow.",l:"beginner"},
+    {t:"I will meet Kavita tomorrow.",l:"beginner"},
+    {t:"I will meet Manoj tomorrow.",l:"beginner"},
+    {t:"I will meet Rekha tomorrow.",l:"beginner"},
+    {t:"I will meet Deepak tomorrow.",l:"beginner"},
+    {t:"I will meet Sonia tomorrow.",l:"beginner"},
+    {t:"I will meet Arjun tomorrow.",l:"beginner"},
+    {t:"I will meet Nisha tomorrow.",l:"beginner"},
+    {t:"I will meet Rajesh tomorrow.",l:"beginner"},
+    {t:"I will meet Anita tomorrow.",l:"beginner"},
+    {t:"I do not like rice very much.",l:"beginner"},
+    {t:"I do not like dal very much.",l:"beginner"},
+    {t:"I do not like roti very much.",l:"beginner"},
+    {t:"I do not like vegetables very much.",l:"beginner"},
+    {t:"I do not like fruit very much.",l:"beginner"},
+    {t:"I do not like tea very much.",l:"beginner"},
+    {t:"I do not like milk very much.",l:"beginner"},
+    {t:"I do not like mango very much.",l:"beginner"},
+    {t:"I do not like banana very much.",l:"beginner"},
+    {t:"I do not like bread very much.",l:"beginner"},
+    {t:"I do not like eggs very much.",l:"beginner"},
+    {t:"I do not like fish very much.",l:"beginner"},
+    {t:"I do not like chicken very much.",l:"beginner"},
+    {t:"I do not like sweets very much.",l:"beginner"},
+    {t:"I do not like curry very much.",l:"beginner"},
+    {t:"I do not like paneer very much.",l:"beginner"},
+    {t:"I do not like potatoes very much.",l:"beginner"},
+    {t:"I do not like onions very much.",l:"beginner"},
+    {t:"I do not like tomatoes very much.",l:"beginner"},
+    {t:"I do not like spinach very much.",l:"beginner"},
+    {t:"Where is my book?",l:"beginner"},
+    {t:"Where is my pen?",l:"beginner"},
+    {t:"Where is my bag?",l:"beginner"},
+    {t:"Where is my phone?",l:"beginner"},
+    {t:"Where is my chair?",l:"beginner"},
+    {t:"Where is my table?",l:"beginner"},
+    {t:"Where is my bicycle?",l:"beginner"},
+    {t:"Where is my umbrella?",l:"beginner"},
+    {t:"Where is my watch?",l:"beginner"},
+    {t:"Where is my key?",l:"beginner"},
+    {t:"Where is my bottle?",l:"beginner"},
+    {t:"Where is my notebook?",l:"beginner"},
+    {t:"Where is my shoes?",l:"beginner"},
+    {t:"Where is my clock?",l:"beginner"},
+    {t:"Where is my lamp?",l:"beginner"},
+    {t:"Where is my fan?",l:"beginner"},
+    {t:"Where is my mirror?",l:"beginner"},
+    {t:"Where is my basket?",l:"beginner"},
+    {t:"Where is my blanket?",l:"beginner"},
+    {t:"Where is my radio?",l:"beginner"},
+    {t:"I saw a dog near the river.",l:"beginner"},
+    {t:"I saw a cat near the river.",l:"beginner"},
+    {t:"I saw a cow near the river.",l:"beginner"},
+    {t:"I saw a goat near the river.",l:"beginner"},
+    {t:"I saw a bird near the river.",l:"beginner"},
+    {t:"I saw a horse near the river.",l:"beginner"},
+    {t:"I saw a elephant near the river.",l:"beginner"},
+    {t:"I saw a rabbit near the river.",l:"beginner"},
+    {t:"I saw a hen near the river.",l:"beginner"},
+    {t:"I saw a buffalo near the river.",l:"beginner"},
+    {t:"I saw a monkey near the river.",l:"beginner"},
+    {t:"I saw a parrot near the river.",l:"beginner"},
+    {t:"I saw a duck near the river.",l:"beginner"},
+    {t:"I saw a sheep near the river.",l:"beginner"},
+    {t:"I saw a peacock near the river.",l:"beginner"},
+    {t:"Why are you happy?",l:"beginner"},
+    {t:"Why are you tired?",l:"beginner"},
+    {t:"Why are you hungry?",l:"beginner"},
+    {t:"Why are you thirsty?",l:"beginner"},
+    {t:"Why are you busy?",l:"beginner"},
+    {t:"Why are you free?",l:"beginner"},
+    {t:"Why are you sick?",l:"beginner"},
+    {t:"Why are you excited?",l:"beginner"},
+    {t:"Why are you nervous?",l:"beginner"},
+    {t:"Why are you confident?",l:"beginner"},
+    {t:"Why are you angry?",l:"beginner"},
+    {t:"Why are you sad?",l:"beginner"},
+    {t:"Why are you proud?",l:"beginner"},
+    {t:"Why are you curious?",l:"beginner"},
+    {t:"Why are you confused?",l:"beginner"},
+    {t:"Why are you relaxed?",l:"beginner"},
+    {t:"Why are you worried?",l:"beginner"},
+    {t:"Why are you grateful?",l:"beginner"},
+    {t:"Why are you hopeful?",l:"beginner"},
+    {t:"Why are you calm?",l:"beginner"},
+    {t:"I love my mother very much.",l:"beginner"},
+    {t:"I love my father very much.",l:"beginner"},
+    {t:"I love my brother very much.",l:"beginner"},
+    {t:"I love my sister very much.",l:"beginner"},
+    {t:"I love my grandmother very much.",l:"beginner"},
+    {t:"I love my grandfather very much.",l:"beginner"},
+    {t:"I love my uncle very much.",l:"beginner"},
+    {t:"I love my aunt very much.",l:"beginner"},
+    {t:"I love my son very much.",l:"beginner"},
+    {t:"I love my daughter very much.",l:"beginner"},
+    {t:"I love my friend very much.",l:"beginner"},
+    {t:"I love my teacher very much.",l:"beginner"},
+    {t:"I love my neighbour very much.",l:"beginner"},
+    {t:"I love my cousin very much.",l:"beginner"},
+    {t:"Ravi works as a teacher.",l:"intermediate"},
+    {t:"Sunita works as a doctor.",l:"intermediate"},
+    {t:"Amit works as a engineer.",l:"intermediate"},
+    {t:"Priya works as a farmer.",l:"intermediate"},
+    {t:"Anil works as a shopkeeper.",l:"intermediate"},
+    {t:"Meera works as a driver.",l:"intermediate"},
+    {t:"Rahul works as a nurse.",l:"intermediate"},
+    {t:"Pooja works as a clerk.",l:"intermediate"},
+    {t:"Vikas works as a tailor.",l:"intermediate"},
+    {t:"Neha works as a electrician.",l:"intermediate"},
+    {t:"Suresh works as a plumber.",l:"intermediate"},
+    {t:"Kavita works as a cook.",l:"intermediate"},
+    {t:"Manoj works as a police officer.",l:"intermediate"},
+    {t:"Rekha works as a manager.",l:"intermediate"},
+    {t:"Deepak works as a accountant.",l:"intermediate"},
+    {t:"Sonia works as a lawyer.",l:"intermediate"},
+    {t:"Arjun works as a receptionist.",l:"intermediate"},
+    {t:"Nisha works as a salesperson.",l:"intermediate"},
+    {t:"Rajesh works as a mechanic.",l:"intermediate"},
+    {t:"Anita works as a pharmacist.",l:"intermediate"},
+    {t:"I was reading a book when you called.",l:"intermediate"},
+    {t:"I was watching a movie when you called.",l:"intermediate"},
+    {t:"I was playing cricket when you called.",l:"intermediate"},
+    {t:"I was cooking dinner when you called.",l:"intermediate"},
+    {t:"I was cleaning the house when you called.",l:"intermediate"},
+    {t:"I was doing homework when you called.",l:"intermediate"},
+    {t:"I was walking in the park when you called.",l:"intermediate"},
+    {t:"I was riding a bicycle when you called.",l:"intermediate"},
+    {t:"I was singing a song when you called.",l:"intermediate"},
+    {t:"I was painting a picture when you called.",l:"intermediate"},
+    {t:"I was washing clothes when you called.",l:"intermediate"},
+    {t:"I was feeding the animals when you called.",l:"intermediate"},
+    {t:"I was writing a letter when you called.",l:"intermediate"},
+    {t:"I was fixing the fan when you called.",l:"intermediate"},
+    {t:"I was watering the plants when you called.",l:"intermediate"},
+    {t:"I was late because I was tired.",l:"intermediate"},
+    {t:"I was late because it was raining.",l:"intermediate"},
+    {t:"I was late because I had an exam.",l:"intermediate"},
+    {t:"I was late because I woke up late.",l:"intermediate"},
+    {t:"I was late because the bus was late.",l:"intermediate"},
+    {t:"I was late because I forgot my bag.",l:"intermediate"},
+    {t:"I was late because I was not feeling well.",l:"intermediate"},
+    {t:"I was late because of the traffic.",l:"intermediate"},
+    {t:"I was late because I had a headache.",l:"intermediate"},
+    {t:"I was late because the shop was closed.",l:"intermediate"},
+    {t:"I was late because the power went out.",l:"intermediate"},
+    {t:"I was late because I missed my train.",l:"intermediate"},
+    {t:"I was late because my phone was not working.",l:"intermediate"},
+    {t:"I was late because it was a holiday.",l:"intermediate"},
+    {t:"I was late because I had a guest at home.",l:"intermediate"},
+    {t:"I am planning to start a new job next month.",l:"intermediate"},
+    {t:"I am planning to visit my grandmother next month.",l:"intermediate"},
+    {t:"I am planning to join an English class next month.",l:"intermediate"},
+    {t:"I am planning to open a small shop next month.",l:"intermediate"},
+    {t:"I am planning to travel to Lucknow next month.",l:"intermediate"},
+    {t:"I am planning to save some money next month.",l:"intermediate"},
+    {t:"I am planning to learn to swim next month.",l:"intermediate"},
+    {t:"I am planning to buy a new phone next month.",l:"intermediate"},
+    {t:"I am planning to complete the course next month.",l:"intermediate"},
+    {t:"I am planning to apply for a scholarship next month.",l:"intermediate"},
+    {t:"I am planning to move to a new city next month.",l:"intermediate"},
+    {t:"I am planning to start my own business next month.",l:"intermediate"},
+    {t:"I am planning to learn computer skills next month.",l:"intermediate"},
+    {t:"I am planning to improve my English next month.",l:"intermediate"},
+    {t:"I am planning to take a short course next month.",l:"intermediate"},
+    {t:"Can you tell me how to get to the bus station?",l:"intermediate"},
+    {t:"Can you tell me how to find a good doctor?",l:"intermediate"},
+    {t:"Can you tell me how to open a bank account?",l:"intermediate"},
+    {t:"Can you tell me how to apply for this job?",l:"intermediate"},
+    {t:"Can you tell me how to fill out this form?",l:"intermediate"},
+    {t:"Can you tell me how to reach the market?",l:"intermediate"},
+    {t:"Can you tell me how to use this machine?",l:"intermediate"},
+    {t:"Can you tell me how to register for the course?",l:"intermediate"},
+    {t:"Can you tell me how to contact the teacher?",l:"intermediate"},
+    {t:"Can you tell me how to pay the fee?",l:"intermediate"},
+    {t:"Can you tell me how to renew my documents?",l:"intermediate"},
+    {t:"Can you tell me how to book a train ticket?",l:"intermediate"},
+    {t:"Can you tell me how to find this address?",l:"intermediate"},
+    {t:"Can you tell me how to join this class?",l:"intermediate"},
+    {t:"Can you tell me how to submit my application?",l:"intermediate"},
+    {t:"Ravi has been working as a farmer for five years.",l:"intermediate"},
+    {t:"Sunita has been working as a shopkeeper for five years.",l:"intermediate"},
+    {t:"Amit has been working as a driver for five years.",l:"intermediate"},
+    {t:"Priya has been working as a nurse for five years.",l:"intermediate"},
+    {t:"Anil has been working as a clerk for five years.",l:"intermediate"},
+    {t:"Meera has been working as a tailor for five years.",l:"intermediate"},
+    {t:"Rahul has been working as a electrician for five years.",l:"intermediate"},
+    {t:"Pooja has been working as a plumber for five years.",l:"intermediate"},
+    {t:"Vikas has been working as a cook for five years.",l:"intermediate"},
+    {t:"Neha has been working as a police officer for five years.",l:"intermediate"},
+    {t:"Suresh has been working as a manager for five years.",l:"intermediate"},
+    {t:"Kavita has been working as a accountant for five years.",l:"intermediate"},
+    {t:"Manoj has been working as a lawyer for five years.",l:"intermediate"},
+    {t:"Rekha has been working as a receptionist for five years.",l:"intermediate"},
+    {t:"Deepak has been working as a salesperson for five years.",l:"intermediate"},
+    {t:"Sonia has been working as a mechanic for five years.",l:"intermediate"},
+    {t:"Arjun has been working as a pharmacist for five years.",l:"intermediate"},
+    {t:"Nisha has been working as a teacher for five years.",l:"intermediate"},
+    {t:"Rajesh has been working as a doctor for five years.",l:"intermediate"},
+    {t:"Anita has been working as a engineer for five years.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the market.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the school.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the hospital.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the temple.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the park.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the station.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the office.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the village.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the city.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the river.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the farm.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the shop.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the bank.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the post office.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the bus stop.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the library.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the clinic.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the factory.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the college.",l:"intermediate"},
+    {t:"If it rains tomorrow, we will not go to the garden.",l:"intermediate"},
+    {t:"I have never tried rice before.",l:"intermediate"},
+    {t:"I have never tried dal before.",l:"intermediate"},
+    {t:"I have never tried roti before.",l:"intermediate"},
+    {t:"I have never tried vegetables before.",l:"intermediate"},
+    {t:"I have never tried fruit before.",l:"intermediate"},
+    {t:"I have never tried tea before.",l:"intermediate"},
+    {t:"I have never tried milk before.",l:"intermediate"},
+    {t:"I have never tried mango before.",l:"intermediate"},
+    {t:"I have never tried banana before.",l:"intermediate"},
+    {t:"I have never tried bread before.",l:"intermediate"},
+    {t:"I have never tried eggs before.",l:"intermediate"},
+    {t:"I have never tried fish before.",l:"intermediate"},
+    {t:"I have never tried chicken before.",l:"intermediate"},
+    {t:"I have never tried sweets before.",l:"intermediate"},
+    {t:"I have never tried curry before.",l:"intermediate"},
+    {t:"I have never tried paneer before.",l:"intermediate"},
+    {t:"I have never tried potatoes before.",l:"intermediate"},
+    {t:"I have never tried onions before.",l:"intermediate"},
+    {t:"I have never tried tomatoes before.",l:"intermediate"},
+    {t:"I have never tried spinach before.",l:"intermediate"},
+    {t:"Although it was late, Ravi finished the work.",l:"intermediate"},
+    {t:"Although it was late, Sunita finished the work.",l:"intermediate"},
+    {t:"Although it was late, Amit finished the work.",l:"intermediate"},
+    {t:"Although it was late, Priya finished the work.",l:"intermediate"},
+    {t:"Although it was late, Anil finished the work.",l:"intermediate"},
+    {t:"Although it was late, Meera finished the work.",l:"intermediate"},
+    {t:"Although it was late, Rahul finished the work.",l:"intermediate"},
+    {t:"Although it was late, Pooja finished the work.",l:"intermediate"},
+    {t:"Although it was late, Vikas finished the work.",l:"intermediate"},
+    {t:"Although it was late, Neha finished the work.",l:"intermediate"},
+    {t:"Although it was late, Suresh finished the work.",l:"intermediate"},
+    {t:"Although it was late, Kavita finished the work.",l:"intermediate"},
+    {t:"Although it was late, Manoj finished the work.",l:"intermediate"},
+    {t:"Although it was late, Rekha finished the work.",l:"intermediate"},
+    {t:"Although it was late, Deepak finished the work.",l:"intermediate"},
+    {t:"Although it was late, Sonia finished the work.",l:"intermediate"},
+    {t:"Although it was late, Arjun finished the work.",l:"intermediate"},
+    {t:"Although it was late, Nisha finished the work.",l:"intermediate"},
+    {t:"Although it was late, Rajesh finished the work.",l:"intermediate"},
+    {t:"Although it was late, Anita finished the work.",l:"intermediate"},
+    {t:"I would like to start a new job someday.",l:"intermediate"},
+    {t:"I would like to visit my grandmother someday.",l:"intermediate"},
+    {t:"I would like to join an English class someday.",l:"intermediate"},
+    {t:"I would like to open a small shop someday.",l:"intermediate"},
+    {t:"I would like to travel to Lucknow someday.",l:"intermediate"},
+    {t:"I would like to save some money someday.",l:"intermediate"},
+    {t:"I would like to learn to swim someday.",l:"intermediate"},
+    {t:"I would like to buy a new phone someday.",l:"intermediate"},
+    {t:"I would like to complete the course someday.",l:"intermediate"},
+    {t:"I would like to apply for a scholarship someday.",l:"intermediate"},
+    {t:"I would like to move to a new city someday.",l:"intermediate"},
+    {t:"I would like to start my own business someday.",l:"intermediate"},
+    {t:"I would like to learn computer skills someday.",l:"intermediate"},
+    {t:"I would like to improve my English someday.",l:"intermediate"},
+    {t:"I would like to take a short course someday.",l:"intermediate"},
+    {t:"The teacher advised me to rest for a few days.",l:"intermediate"},
+    {t:"The doctor advised me to rest for a few days.",l:"intermediate"},
+    {t:"The engineer advised me to rest for a few days.",l:"intermediate"},
+    {t:"The farmer advised me to rest for a few days.",l:"intermediate"},
+    {t:"The shopkeeper advised me to rest for a few days.",l:"intermediate"},
+    {t:"The driver advised me to rest for a few days.",l:"intermediate"},
+    {t:"The nurse advised me to rest for a few days.",l:"intermediate"},
+    {t:"The clerk advised me to rest for a few days.",l:"intermediate"},
+    {t:"The tailor advised me to rest for a few days.",l:"intermediate"},
+    {t:"The electrician advised me to rest for a few days.",l:"intermediate"},
+    {t:"The plumber advised me to rest for a few days.",l:"intermediate"},
+    {t:"The cook advised me to rest for a few days.",l:"intermediate"},
+    {t:"The police officer advised me to rest for a few days.",l:"intermediate"},
+    {t:"The manager advised me to rest for a few days.",l:"intermediate"},
+    {t:"The accountant advised me to rest for a few days.",l:"intermediate"},
+    {t:"The lawyer advised me to rest for a few days.",l:"intermediate"},
+    {t:"The receptionist advised me to rest for a few days.",l:"intermediate"},
+    {t:"The salesperson advised me to rest for a few days.",l:"intermediate"},
+    {t:"The mechanic advised me to rest for a few days.",l:"intermediate"},
+    {t:"The pharmacist advised me to rest for a few days.",l:"intermediate"},
+    {t:"We could not attend the meeting because I was tired.",l:"intermediate"},
+    {t:"We could not attend the meeting because it was raining.",l:"intermediate"},
+    {t:"We could not attend the meeting because I had an exam.",l:"intermediate"},
+    {t:"We could not attend the meeting because I woke up late.",l:"intermediate"},
+    {t:"We could not attend the meeting because the bus was late.",l:"intermediate"},
+    {t:"We could not attend the meeting because I forgot my bag.",l:"intermediate"},
+    {t:"We could not attend the meeting because I was not feeling well.",l:"intermediate"},
+    {t:"We could not attend the meeting because of the traffic.",l:"intermediate"},
+    {t:"We could not attend the meeting because I had a headache.",l:"intermediate"},
+    {t:"We could not attend the meeting because the shop was closed.",l:"intermediate"},
+    {t:"We could not attend the meeting because the power went out.",l:"intermediate"},
+    {t:"We could not attend the meeting because I missed my train.",l:"intermediate"},
+    {t:"We could not attend the meeting because my phone was not working.",l:"intermediate"},
+    {t:"We could not attend the meeting because it was a holiday.",l:"intermediate"},
+    {t:"We could not attend the meeting because I had a guest at home.",l:"intermediate"},
+    {t:"My favourite way to relax is reading a book.",l:"intermediate"},
+    {t:"My favourite way to relax is watching a movie.",l:"intermediate"},
+    {t:"My favourite way to relax is playing cricket.",l:"intermediate"},
+    {t:"My favourite way to relax is cooking dinner.",l:"intermediate"},
+    {t:"My favourite way to relax is cleaning the house.",l:"intermediate"},
+    {t:"My favourite way to relax is doing homework.",l:"intermediate"},
+    {t:"My favourite way to relax is walking in the park.",l:"intermediate"},
+    {t:"My favourite way to relax is riding a bicycle.",l:"intermediate"},
+    {t:"My favourite way to relax is singing a song.",l:"intermediate"},
+    {t:"My favourite way to relax is painting a picture.",l:"intermediate"},
+    {t:"My favourite way to relax is washing clothes.",l:"intermediate"},
+    {t:"My favourite way to relax is feeding the animals.",l:"intermediate"},
+    {t:"My favourite way to relax is writing a letter.",l:"intermediate"},
+    {t:"My favourite way to relax is fixing the fan.",l:"intermediate"},
+    {t:"My favourite way to relax is watering the plants.",l:"intermediate"},
+    {t:"I need to go to the market before it closes.",l:"intermediate"},
+    {t:"I need to go to the school before it closes.",l:"intermediate"},
+    {t:"I need to go to the hospital before it closes.",l:"intermediate"},
+    {t:"I need to go to the temple before it closes.",l:"intermediate"},
+    {t:"I need to go to the park before it closes.",l:"intermediate"},
+    {t:"I need to go to the station before it closes.",l:"intermediate"},
+    {t:"I need to go to the office before it closes.",l:"intermediate"},
+    {t:"I need to go to the village before it closes.",l:"intermediate"},
+    {t:"I need to go to the city before it closes.",l:"intermediate"},
+    {t:"I need to go to the river before it closes.",l:"intermediate"},
+    {t:"I need to go to the farm before it closes.",l:"intermediate"},
+    {t:"I need to go to the shop before it closes.",l:"intermediate"},
+    {t:"I need to go to the bank before it closes.",l:"intermediate"},
+    {t:"I need to go to the post office before it closes.",l:"intermediate"},
+    {t:"I need to go to the bus stop before it closes.",l:"intermediate"},
+    {t:"I need to go to the library before it closes.",l:"intermediate"},
+    {t:"I need to go to the clinic before it closes.",l:"intermediate"},
+    {t:"I need to go to the factory before it closes.",l:"intermediate"},
+    {t:"I need to go to the college before it closes.",l:"intermediate"},
+    {t:"I need to go to the garden before it closes.",l:"intermediate"},
+    {t:"She wants to become a teacher after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a doctor after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a engineer after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a farmer after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a shopkeeper after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a driver after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a nurse after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a clerk after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a tailor after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a electrician after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a plumber after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a cook after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a police officer after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a manager after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a accountant after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a lawyer after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a receptionist after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a salesperson after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a mechanic after finishing her studies.",l:"intermediate"},
+    {t:"She wants to become a pharmacist after finishing her studies.",l:"intermediate"},
+    {t:"I am not sure how to get to the bus station.",l:"intermediate"},
+    {t:"I am not sure how to find a good doctor.",l:"intermediate"},
+    {t:"I am not sure how to open a bank account.",l:"intermediate"},
+    {t:"I am not sure how to apply for this job.",l:"intermediate"},
+    {t:"I am not sure how to fill out this form.",l:"intermediate"},
+    {t:"I am not sure how to reach the market.",l:"intermediate"},
+    {t:"I am not sure how to use this machine.",l:"intermediate"},
+    {t:"I am not sure how to register for the course.",l:"intermediate"},
+    {t:"I am not sure how to contact the teacher.",l:"intermediate"},
+    {t:"I am not sure how to pay the fee.",l:"intermediate"},
+    {t:"I am not sure how to renew my documents.",l:"intermediate"},
+    {t:"I am not sure how to book a train ticket.",l:"intermediate"},
+    {t:"I am not sure how to find this address.",l:"intermediate"},
+    {t:"I am not sure how to join this class.",l:"intermediate"},
+    {t:"I am not sure how to submit my application.",l:"intermediate"},
+    {t:"My mother taught me how to cook.",l:"intermediate"},
+    {t:"My father taught me how to cook.",l:"intermediate"},
+    {t:"My brother taught me how to cook.",l:"intermediate"},
+    {t:"My sister taught me how to cook.",l:"intermediate"},
+    {t:"My grandmother taught me how to cook.",l:"intermediate"},
+    {t:"My grandfather taught me how to cook.",l:"intermediate"},
+    {t:"My uncle taught me how to cook.",l:"intermediate"},
+    {t:"My aunt taught me how to cook.",l:"intermediate"},
+    {t:"My son taught me how to cook.",l:"intermediate"},
+    {t:"My daughter taught me how to cook.",l:"intermediate"},
+    {t:"My friend taught me how to cook.",l:"intermediate"},
+    {t:"My teacher taught me how to cook.",l:"intermediate"},
+    {t:"My neighbour taught me how to cook.",l:"intermediate"},
+    {t:"My cousin taught me how to cook.",l:"intermediate"},
+    {t:"We have decided to start a new job this year.",l:"intermediate"},
+    {t:"We have decided to visit my grandmother this year.",l:"intermediate"},
+    {t:"We have decided to join an English class this year.",l:"intermediate"},
+    {t:"We have decided to open a small shop this year.",l:"intermediate"},
+    {t:"We have decided to travel to Lucknow this year.",l:"intermediate"},
+    {t:"We have decided to save some money this year.",l:"intermediate"},
+    {t:"We have decided to learn to swim this year.",l:"intermediate"},
+    {t:"We have decided to buy a new phone this year.",l:"intermediate"},
+    {t:"We have decided to complete the course this year.",l:"intermediate"},
+    {t:"We have decided to apply for a scholarship this year.",l:"intermediate"},
+    {t:"We have decided to move to a new city this year.",l:"intermediate"},
+    {t:"We have decided to start my own business this year.",l:"intermediate"},
+    {t:"We have decided to learn computer skills this year.",l:"intermediate"},
+    {t:"We have decided to improve my English this year.",l:"intermediate"},
+    {t:"We have decided to take a short course this year.",l:"intermediate"},
+    {t:"Ravi called me to say she would be late.",l:"intermediate"},
+    {t:"Sunita called me to say he would be late.",l:"intermediate"},
+    {t:"Amit called me to say she would be late.",l:"intermediate"},
+    {t:"Priya called me to say he would be late.",l:"intermediate"},
+    {t:"Anil called me to say she would be late.",l:"intermediate"},
+    {t:"Meera called me to say he would be late.",l:"intermediate"},
+    {t:"Rahul called me to say she would be late.",l:"intermediate"},
+    {t:"Pooja called me to say he would be late.",l:"intermediate"},
+    {t:"Vikas called me to say she would be late.",l:"intermediate"},
+    {t:"Neha called me to say he would be late.",l:"intermediate"},
+    {t:"Suresh called me to say she would be late.",l:"intermediate"},
+    {t:"Kavita called me to say he would be late.",l:"intermediate"},
+    {t:"Manoj called me to say she would be late.",l:"intermediate"},
+    {t:"Rekha called me to say he would be late.",l:"intermediate"},
+    {t:"Deepak called me to say she would be late.",l:"intermediate"},
+    {t:"Sonia called me to say he would be late.",l:"intermediate"},
+    {t:"Arjun called me to say she would be late.",l:"intermediate"},
+    {t:"Nisha called me to say he would be late.",l:"intermediate"},
+    {t:"Rajesh called me to say she would be late.",l:"intermediate"},
+    {t:"Anita called me to say he would be late.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished reading a book.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished watching a movie.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished playing cricket.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished cooking dinner.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished cleaning the house.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished doing homework.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished walking in the park.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished riding a bicycle.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished singing a song.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished painting a picture.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished washing clothes.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished feeding the animals.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished writing a letter.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished fixing the fan.",l:"intermediate"},
+    {t:"By the time I arrived, she had already finished watering the plants.",l:"intermediate"},
+    {t:"If I get this job, I will buy a gift for my family.",l:"advanced"},
+    {t:"If I finish my work early, I will visit my friend.",l:"advanced"},
+    {t:"If she calls me back, I will let you know immediately.",l:"advanced"},
+    {t:"If the shop is open, I will buy some vegetables.",l:"advanced"},
+    {t:"If I save enough money, I will start my own business.",l:"advanced"},
+    {t:"If he agrees to help, we will finish the project faster.",l:"advanced"},
+    {t:"If the bus arrives on time, I will not be late again.",l:"advanced"},
+    {t:"If I pass this exam, my parents will be very proud.",l:"advanced"},
+    {t:"If the weather improves, we will go for a walk.",l:"advanced"},
+    {t:"Although it was raining, we still went to the market.",l:"advanced"},
+    {t:"Although he was very tired, he finished the report on time.",l:"advanced"},
+    {t:"Although the traffic was heavy, she reached the office on time.",l:"advanced"},
+    {t:"Although she had a headache, she completed the presentation.",l:"advanced"},
+    {t:"Although the deadline was near, the team submitted the project.",l:"advanced"},
+    {t:"Although the market was closed, they found another shop.",l:"advanced"},
+    {t:"Although the exam was difficult, he passed with good marks.",l:"advanced"},
+    {t:"Although the power was out, we managed to finish the work.",l:"advanced"},
+    {t:"Although the road was blocked, we found another way.",l:"advanced"},
+    {t:"Although she was new to the job, she handled it confidently.",l:"advanced"},
+    {t:"I believe online classes is important because it improves health.",l:"advanced"},
+    {t:"I believe online classes is important because it saves time.",l:"advanced"},
+    {t:"I believe joining a gym is important because it helps in the long run.",l:"advanced"},
+    {t:"I believe joining a gym is important because it reduces stress.",l:"advanced"},
+    {t:"I believe learning English early is important because it reduces stress.",l:"advanced"},
+    {t:"I believe learning English early is important because it builds confidence.",l:"advanced"},
+    {t:"I believe saving money every month is important because it improves health.",l:"advanced"},
+    {t:"I believe saving money every month is important because it is a smart habit.",l:"advanced"},
+    {t:"I believe working from home is important because it improves health.",l:"advanced"},
+    {t:"I believe working from home is important because it is good for the mind.",l:"advanced"},
+    {t:"I believe using social media is important because it saves time.",l:"advanced"},
+    {t:"I believe using social media is important because it is worth the effort.",l:"advanced"},
+    {t:"I believe eating home-cooked food is important because it improves health.",l:"advanced"},
+    {t:"I believe eating home-cooked food is important because it reduces stress.",l:"advanced"},
+    {t:"I believe reading daily is important because it reduces stress.",l:"advanced"},
+    {t:"I believe reading daily is important because it is a smart habit.",l:"advanced"},
+    {t:"I believe waking up early is important because it is worth the effort.",l:"advanced"},
+    {t:"I believe waking up early is important because it saves time.",l:"advanced"},
+    {t:"I believe staying physically active is important because it is a smart habit.",l:"advanced"},
+    {t:"I believe staying physically active is important because it reduces stress.",l:"advanced"},
+    {t:"The team is currently reviewing the quarterly report before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the new project before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the client meeting before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the training session before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the sales target before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the team schedule before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the budget plan before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the product launch before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the customer feedback before the final decision.",l:"advanced"},
+    {t:"The team is currently reviewing the annual review before the final decision.",l:"advanced"},
+    {t:"We need to finalize the quarterly report by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the new project by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the client meeting by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the training session by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the sales target by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the team schedule by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the budget plan by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the product launch by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the customer feedback by the end of this week.",l:"advanced"},
+    {t:"We need to finalize the annual review by the end of this week.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a teacher.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a doctor.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a engineer.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a farmer.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a shopkeeper.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a driver.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a nurse.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a clerk.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a tailor.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a electrician.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a plumber.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a cook.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a police officer.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a manager.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a accountant.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a lawyer.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a receptionist.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a salesperson.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a mechanic.",l:"advanced"},
+    {t:"Despite the challenges, she managed to succeed as a pharmacist.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to start a new job.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to visit my grandmother.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to join an English class.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to open a small shop.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to travel to Lucknow.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to save some money.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to learn to swim.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to buy a new phone.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to complete the course.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to apply for a scholarship.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to move to a new city.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to start my own business.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to learn computer skills.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to improve my English.",l:"advanced"},
+    {t:"Given the current situation, it would be wise to take a short course.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to get to the bus station.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to find a good doctor.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to open a bank account.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to apply for this job.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to fill out this form.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to reach the market.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to use this machine.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to register for the course.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to contact the teacher.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to pay the fee.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to renew my documents.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to book a train ticket.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to find this address.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to join this class.",l:"advanced"},
+    {t:"I would appreciate it if you could explain how to submit my application.",l:"advanced"},
+    {t:"The meeting was postponed because I was tired, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because it was raining, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I had an exam, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I woke up late, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because the bus was late, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I forgot my bag, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I was not feeling well, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because of the traffic, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I had a headache, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because the shop was closed, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because the power went out, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I missed my train, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because my phone was not working, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because it was a holiday, which affected our entire schedule.",l:"advanced"},
+    {t:"The meeting was postponed because I had a guest at home, which affected our entire schedule.",l:"advanced"},
+    {t:"The more effort you put into practice, the faster your English will improve.",l:"advanced"},
+    {t:"Despite having limited resources, the team completed the project successfully.",l:"advanced"},
+    {t:"Had I known about the change earlier, I would have prepared differently.",l:"advanced"},
+    {t:"Not only did she pass the interview, but she also impressed the panel.",l:"advanced"},
+    {t:"The company is expected to expand its operations by the end of this year.",l:"advanced"},
+    {t:"It is essential to communicate clearly, especially during a job interview.",l:"advanced"},
+    {t:"While some students prefer online classes, others still value face-to-face learning.",l:"advanced"},
+    {t:"The proposal was rejected, mainly because it lacked sufficient supporting evidence.",l:"advanced"},
+    {t:"Regardless of the outcome, I am proud of the effort I put into this project.",l:"advanced"},
+    {t:"She has been preparing for this opportunity for over a year now.",l:"advanced"}
+  ];
+
+  const speakLevels = [
+    { key: 'all', label: 'All levels' },
+    { key: 'beginner', label: 'Beginner' },
+    { key: 'intermediate', label: 'Intermediate' },
+    { key: 'advanced', label: 'Advanced' }
+  ];
+  let activeSpeakLevel = 'all';
+  let speakBank = [];
+  let speakIdx = 0;
+
+  const speakSentenceEl = document.getElementById('speakSentence');
+  const speakListenBtn = document.getElementById('speakListenBtn');
+  const speakRecordBtn = document.getElementById('speakRecordBtn');
+  const speakFeedbackEl = document.getElementById('speakFeedback');
+  const speakNextBtn = document.getElementById('speakNextBtn');
+  const speakSupportNote = document.getElementById('speakSupportNote');
+  const speakLevelTabsEl = document.getElementById('speakLevelTabs');
+
+  const hasTTS = 'speechSynthesis' in window;
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const hasSTT = !!SpeechRec;
+
+  function buildSpeakBank(levelKey){
+    const pool = levelKey === 'all' ? speakPool : speakPool.filter(s => s.l === levelKey);
+    return shuffleArray(pool);
+  }
+
+  function renderSpeakLevelTabs(){
+    speakLevelTabsEl.innerHTML = '';
+    speakLevels.forEach(lvl => {
+      const btn = document.createElement('button');
+      btn.className = 'lesson-tab' + (lvl.key === activeSpeakLevel ? ' active' : '');
+      btn.textContent = lvl.label;
+      btn.addEventListener('click', () => {
+        activeSpeakLevel = lvl.key;
+        renderSpeakLevelTabs();
+        speakBank = buildSpeakBank(activeSpeakLevel);
+        speakIdx = 0;
+        loadSpeakSentence();
+      });
+      speakLevelTabsEl.appendChild(btn);
+    });
+  }
+
+  function loadSpeakSentence(){
+    speakSentenceEl.textContent = speakBank[speakIdx].t;
+    speakFeedbackEl.classList.remove('show');
+    speakNextBtn.style.display = 'none';
+  }
+
+  renderSpeakLevelTabs();
+  speakBank = buildSpeakBank(activeSpeakLevel);
+  loadSpeakSentence();
+
+  if (!hasTTS) speakListenBtn.style.display = 'none';
+  if (!hasSTT) speakRecordBtn.style.display = 'none';
+  if (!hasTTS || !hasSTT){
+    speakSupportNote.textContent = "For the full experience, open this site in Chrome on Android or desktop — some browsers don't support voice features yet.";
+  }
+
+  speakListenBtn.addEventListener('click', () => {
+    if (!hasTTS) return;
+    const utter = new SpeechSynthesisUtterance(speakBank[speakIdx].t);
+    utter.lang = 'en-IN';
+    utter.rate = 0.92;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
+  });
+
+  function normalize(str){
+    return str.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/).filter(Boolean);
+  }
+
+  if (hasSTT){
+    const recognition = new SpeechRec();
+    recognition.lang = 'en-IN';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    speakRecordBtn.addEventListener('click', () => {
+      speakRecordBtn.classList.add('recording');
+      speakRecordBtn.textContent = '🎤 Listening…';
+      try{ recognition.start(); }catch(e){ /* already started */ }
+    });
+
+    recognition.addEventListener('result', (event) => {
+      const said = event.results[0][0].transcript;
+      const target = normalize(speakBank[speakIdx].t);
+      const spoken = normalize(said);
+      const matched = target.filter(w => spoken.includes(w)).length;
+      const ratio = matched / target.length;
+
+      let msg;
+      if (ratio >= 0.75){
+        msg = `Great job! We heard: "${said}"`;
+      } else if (ratio >= 0.4){
+        msg = `Good try! We heard: "${said}" — listen again and try once more.`;
+      } else {
+        msg = `We heard: "${said}" — tap Listen to hear the sentence again, then try once more.`;
+      }
+      speakFeedbackEl.textContent = msg;
+      speakFeedbackEl.classList.add('show');
+      speakNextBtn.style.display = 'inline-flex';
+    });
+
+    recognition.addEventListener('end', () => {
+      speakRecordBtn.classList.remove('recording');
+      speakRecordBtn.textContent = '🎤 Speak now';
+    });
+
+    recognition.addEventListener('error', () => {
+      speakRecordBtn.classList.remove('recording');
+      speakRecordBtn.textContent = '🎤 Speak now';
+      speakFeedbackEl.textContent = "Couldn't hear you clearly — check your microphone permission and try again.";
+      speakFeedbackEl.classList.add('show');
+    });
+  }
+
+  speakNextBtn.addEventListener('click', () => {
+    speakIdx = speakIdx + 1;
+    if (speakIdx >= speakBank.length){
+      speakBank = buildSpeakBank(activeSpeakLevel);
+      speakIdx = 0;
+    }
+    loadSpeakSentence();
+  });
+
+  // ---------- Flashcards ----------
+  const flashPool = [
+    { word: "Confident", hindi: "आत्मविश्वासी", ex: "He answered every question confidently." },
+    { word: "Punctual", hindi: "समय का पाबंद", ex: "Always be punctual for your interview." },
+    { word: "Greet", hindi: "अभिवादन करना", ex: "Greet your teacher every morning." },
+    { word: "Curious", hindi: "जिज्ञासु", ex: "Curious students ask a lot of questions." },
+    { word: "Responsible", hindi: "जिम्मेदार", ex: "She is responsible for her younger brother." },
+    { word: "Polite", hindi: "विनम्र", ex: "Always be polite while speaking." },
+    { word: "Honest", hindi: "ईमानदार", ex: "An honest answer is always respected." },
+    { word: "Ambitious", hindi: "महत्वाकांक्षी", ex: "He is ambitious about his career." },
+    { word: "Diligent", hindi: "मेहनती", ex: "A diligent student always completes homework on time." },
+    { word: "Cheerful", hindi: "खुशमिजाज़", ex: "She greeted everyone with a cheerful smile." },
+    { word: "Grateful", hindi: "आभारी", ex: "I am grateful for your support." },
+    { word: "Patient", hindi: "धैर्यवान", ex: "Be patient while learning a new language." },
+    { word: "Reliable", hindi: "भरोसेमंद", ex: "He is a reliable partner in every project." },
+    { word: "Courageous", hindi: "साहसी", ex: "She was courageous during the interview." },
+    { word: "Sincere", hindi: "सच्चा", ex: "A sincere apology can repair trust." },
+    { word: "Optimistic", hindi: "आशावादी", ex: "Stay optimistic about your progress." },
+    { word: "Generous", hindi: "उदार", ex: "He is generous with his time and knowledge." },
+    { word: "Disciplined", hindi: "अनुशासित", ex: "A disciplined routine helps you learn faster." },
+    { word: "Enthusiastic", hindi: "उत्साही", ex: "The teacher was enthusiastic about the new lesson." },
+    { word: "Creative", hindi: "रचनात्मक", ex: "She found a creative way to explain grammar." }
+  ];
+
+  function shuffleFlash(){
+    return shuffleArray(flashPool);
+  }
+
+  let flashBank = shuffleFlash();
+  let flashIdx = 0;
+  const flashCardEl = document.getElementById('flashCard');
+  const flashWordEl = document.getElementById('flashWord');
+  const flashHindiEl = document.getElementById('flashHindi');
+  const flashExEl = document.getElementById('flashEx');
+  const flashCountEl = document.getElementById('flashCount');
+
+  function loadFlash(){
+    flashCardEl.classList.remove('flipped');
+    const item = flashBank[flashIdx];
+    flashWordEl.textContent = item.word;
+    flashHindiEl.textContent = item.hindi;
+    flashExEl.textContent = item.ex;
+    flashCountEl.textContent = `${flashIdx + 1} / ${flashBank.length}`;
+  }
+  loadFlash();
+
+  flashCardEl.addEventListener('click', () => flashCardEl.classList.toggle('flipped'));
+  document.getElementById('flashNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    flashIdx = flashIdx + 1;
+    if (flashIdx >= flashBank.length){
+      flashBank = shuffleFlash();
+      flashIdx = 0;
+    }
+    loadFlash();
+  });
+  document.getElementById('flashPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    flashIdx = (flashIdx - 1 + flashBank.length) % flashBank.length;
+    loadFlash();
+  });
+
+
+  // ============================================================
+  // COURSE LESSONS — edit this section to add your videos
+  // ============================================================
+  // For each lesson: set "id" to your YouTube video ID.
+  // Example: link https://youtu.be/AbCdEfGhIjK  ->  id: "AbCdEfGhIjK"
+  // Leave id as "" (empty) for lessons not uploaded yet —
+  // they'll show as "Coming soon" and stay unclickable.
+  // ============================================================
+  const coursesLessons = {
+    foundation: {
+      label: "Spoken English Foundation",
+      lessons: [
+        { title: "Lesson 1: Greetings & Introductions", id: "", free: true },
+        { title: "Lesson 2: Simple Present Tense", free: false },
+        { title: "Lesson 3: Everyday Vocabulary", free: false },
+        { title: "Lesson 4: Asking Questions", free: false },
+        { title: "Lesson 5: Talking About Family", free: false },
+        { title: "Lesson 6: Numbers & Time", free: false },
+        { title: "Lesson 7: Describing Things", free: false },
+        { title: "Lesson 8: Short Conversations", free: false },
+        { title: "Lesson 9: Common Mistakes", free: false },
+        { title: "Lesson 10: Practice & Review", free: false }
+      ]
+    },
+    basic: {
+      label: "Spoken English Basic",
+      lessons: [
+        { title: "Lesson 1: Daily Routine Talk", id: "", free: true },
+        { title: "Lesson 2: Shopping Conversations", free: false },
+        { title: "Lesson 3: Travel English", free: false },
+        { title: "Lesson 4: At the Market", free: false },
+        { title: "Lesson 5: Making Plans", free: false },
+        { title: "Lesson 6: Phone Conversations", free: false },
+        { title: "Lesson 7: Giving Directions", free: false },
+        { title: "Lesson 8: Talking About Weather", free: false },
+        { title: "Lesson 9: Expressing Opinions", free: false },
+        { title: "Lesson 10: Practice & Review", free: false }
+      ]
+    },
+    interview: {
+      label: "Interview Skills",
+      lessons: [
+        { title: "Lesson 1: Tell Me About Yourself", id: "", free: true },
+        { title: "Lesson 2: Your Strengths & Weaknesses", free: false },
+        { title: "Lesson 3: Why Should We Hire You", free: false },
+        { title: "Lesson 4: Professional Body Language", free: false },
+        { title: "Lesson 5: Common HR Questions", free: false },
+        { title: "Lesson 6: Salary Discussion English", free: false },
+        { title: "Lesson 7: Asking Questions to Interviewer", free: false },
+        { title: "Lesson 8: Phone & Video Interviews", free: false },
+        { title: "Lesson 9: Mock Interview Practice", free: false },
+        { title: "Lesson 10: Final Tips & Review", free: false }
+      ]
+    },
+    kids: {
+      label: "Kids English",
+      lessons: [
+        { title: "Lesson 1: ABC & Phonics", id: "", free: true },
+        { title: "Lesson 2: Colours & Shapes", free: false },
+        { title: "Lesson 3: Animals & Sounds", free: false },
+        { title: "Lesson 4: Family Words", free: false },
+        { title: "Lesson 5: Rhymes & Songs", free: false },
+        { title: "Lesson 6: Simple Story Time", free: false },
+        { title: "Lesson 7: Days & Months", free: false },
+        { title: "Lesson 8: Fun with Numbers", free: false },
+        { title: "Lesson 9: Action Words & Games", free: false },
+        { title: "Lesson 10: Practice & Review", free: false }
+      ]
+    },
+    grammar: {
+      label: "Grammar for Academics",
+      lessons: [
+        { title: "Lesson 1: Parts of Speech", id: "", free: true },
+        { title: "Lesson 2: Tenses Overview", free: false },
+        { title: "Lesson 3: Subject-Verb Agreement", free: false },
+        { title: "Lesson 4: Articles (a, an, the)", free: false },
+        { title: "Lesson 5: Prepositions", free: false },
+        { title: "Lesson 6: Active & Passive Voice", free: false },
+        { title: "Lesson 7: Direct & Indirect Speech", free: false },
+        { title: "Lesson 8: Common Grammar Errors", free: false },
+        { title: "Lesson 9: Exam Practice Questions", free: false },
+        { title: "Lesson 10: Final Review", free: false }
+      ]
+    }
+  };
+
+  let activeCourseKey = 'foundation';
+  let activeLessonIdx = null;
+
+  const lessonTabsEl = document.getElementById('lessonTabs');
+  const lessonListEl = document.getElementById('lessonList');
+  const lessonPlayerEl = document.getElementById('lessonPlayer');
+
+  function renderLessonTabs(){
+    lessonTabsEl.innerHTML = '';
+    Object.keys(coursesLessons).forEach(key => {
+      const btn = document.createElement('button');
+      btn.className = 'lesson-tab' + (key === activeCourseKey ? ' active' : '');
+      btn.textContent = coursesLessons[key].label;
+      btn.addEventListener('click', () => {
+        activeCourseKey = key;
+        activeLessonIdx = null;
+        renderLessonTabs();
+        renderLessonList();
+        renderPlayer();
+      });
+      lessonTabsEl.appendChild(btn);
+    });
+  }
+
+  function renderLessonList(){
+    lessonListEl.innerHTML = '';
+    const lessons = coursesLessons[activeCourseKey].lessons;
+    lessons.forEach((lesson, i) => {
+      const hasVideo = !!lesson.id;
+      const isFree = !!lesson.free;
+      const item = document.createElement('div');
+      let stateLabel = '';
+      let clickable = false;
+
+      if (isFree && hasVideo){
+        stateLabel = '';
+        clickable = true;
+      } else if (isFree && !hasVideo){
+        stateLabel = ' — <em>coming soon</em>';
+        clickable = false;
+      } else {
+        stateLabel = ' &#128274; <em>enroll to unlock</em>';
+        clickable = false;
+      }
+
+      item.className = 'lesson-item' + (!clickable ? ' locked' : '') + (i === activeLessonIdx ? ' active' : '');
+      item.innerHTML = `<span class="lesson-num">${i + 1}</span><span>${lesson.title}${stateLabel}</span>`;
+
+      if (clickable){
+        item.addEventListener('click', () => {
+          activeLessonIdx = i;
+          renderLessonList();
+          renderPlayer();
+        });
+      } else if (!isFree){
+        item.addEventListener('click', () => {
+          const courseName = coursesLessons[activeCourseKey].label;
+          const msg = `Hi, I'd like to enroll in ${courseName} to unlock all the lessons.`;
+          window.open(`https://wa.me/919616422712?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+      }
+      lessonListEl.appendChild(item);
+    });
+  }
+
+  function renderPlayer(){
+    const lessons = coursesLessons[activeCourseKey].lessons;
+    if (activeLessonIdx === null || !lessons[activeLessonIdx].id){
+      lessonPlayerEl.innerHTML = '<div class="lesson-player-empty">Select a free preview lesson to start watching</div>';
+      return;
+    }
+    const videoId = lessons[activeLessonIdx].id;
+    lessonPlayerEl.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" title="${lessons[activeLessonIdx].title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  }
+
+  renderLessonTabs();
+  renderLessonList();
+  renderPlayer();
+
+  // ============================================================
+  // FREE LEVEL TEST — listening, reading, speaking, writing
+  // ============================================================
+  let lvlNameVal = '', lvlPhoneVal = '';
+  let lvlPartIdx = 0;
+  const lvlParts = ['listening', 'reading', 'speaking', 'writing'];
+  const lvlPartTitles = ['Listening', 'Reading', 'Speaking', 'Writing'];
+  const lvlScores = { listening: null, reading: null, speaking: null, writing: null };
+  let lvlWritingSample = '';
+
+  const lvlGate = document.getElementById('lvlGate');
+  const lvlLive = document.getElementById('lvlLive');
+  const lvlResultEl = document.getElementById('lvlResult');
+  const lvlProgressEl = document.getElementById('lvlProgress');
+  const lvlPartLabelEl = document.getElementById('lvlPartLabel');
+  const lvlNextBtn = document.getElementById('lvlNext');
+
+  document.getElementById('lvlUnlock').addEventListener('click', () => {
+    const name = document.getElementById('lvlName').value.trim();
+    const phone = document.getElementById('lvlPhone').value.trim();
+    const phoneValid = /^[6-9]\d{9}$/.test(phone);
+    const errEl = document.getElementById('lvlError');
+
+    if (!name || !phoneValid){
+      errEl.classList.add('show');
+      return;
+    }
+    errEl.classList.remove('show');
+    lvlNameVal = name; lvlPhoneVal = phone;
+
+    const msg = `Hi, I'm ${name}. My number is ${phone}. I'm starting the free English Level Test.`;
+    window.open(`https://wa.me/919616422712?text=${encodeURIComponent(msg)}`, '_blank');
+
+    lvlGate.classList.add('hide');
+    lvlLive.classList.remove('hide');
+    lvlPartIdx = 0;
+    showLvlPart(0);
+  });
+
+  function renderLvlProgress(){
+    lvlProgressEl.innerHTML = '';
+    lvlParts.forEach((_, i) => {
+      const seg = document.createElement('div');
+      seg.className = 'seg' + (i < lvlPartIdx ? ' done' : '');
+      lvlProgressEl.appendChild(seg);
+    });
+  }
+
+  function showLvlPart(idx){
+    lvlPartIdx = idx;
+    renderLvlProgress();
+    lvlPartLabelEl.textContent = `Part ${idx + 1} of 4 — ${lvlPartTitles[idx]}`;
+    document.querySelectorAll('.lvl-part').forEach(el => el.classList.add('hide'));
+    lvlNextBtn.classList.remove('show');
+
+    const key = lvlParts[idx];
+    document.getElementById('lvl' + key.charAt(0).toUpperCase() + key.slice(1)).classList.remove('hide');
+    if (key === 'listening') initLvlListening();
+    if (key === 'reading') initLvlReading();
+    if (key === 'speaking') initLvlSpeaking();
+    if (key === 'writing') initLvlWriting();
+  }
+
+  lvlNextBtn.addEventListener('click', () => {
+    if (lvlPartIdx < lvlParts.length - 1){
+      showLvlPart(lvlPartIdx + 1);
+    } else {
+      showLvlResult();
+    }
+  });
+
+  // --- Listening ---
+  function initLvlListening(){
+    const q = "What did Ravi go to buy?";
+    const sentence = "Ravi went to the market to buy vegetables and fruits for his family.";
+    const options = ["Books and pens", "Vegetables and fruits", "Clothes and shoes"];
+    const correct = 1;
+
+    document.getElementById('lvlListenQ').textContent = q;
+    const optsEl = document.getElementById('lvlListenOpts');
+    optsEl.innerHTML = '';
+    document.getElementById('lvlListenFeedback').classList.remove('show');
+
+    document.getElementById('lvlPlayAudio').onclick = () => {
+      if (!hasTTS) return;
+      const utter = new SpeechSynthesisUtterance(sentence);
+      utter.lang = 'en-IN'; utter.rate = 0.92;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utter);
+    };
+
+    options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        optsEl.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+        if (i === correct){ btn.classList.add('correct'); lvlScores.listening = 1; }
+        else { btn.classList.add('wrong'); optsEl.children[correct].classList.add('correct'); lvlScores.listening = 0; }
+        const fb = document.getElementById('lvlListenFeedback');
+        fb.textContent = i === correct ? "Correct!" : "Not quite — the correct answer is highlighted above.";
+        fb.classList.add('show');
+        lvlNextBtn.classList.add('show');
+      });
+      optsEl.appendChild(btn);
+    });
+  }
+
+  // --- Reading ---
+  function initLvlReading(){
+    document.getElementById('lvlPassage').innerHTML = '<h4>Read this short passage</h4><p>Sunita works in a small shop near her home. Every day, she opens the shop at nine in the morning and closes it at seven in the evening. She enjoys talking to her customers and helping them find what they need.</p>';
+    const q = "What time does Sunita open her shop?";
+    const options = ["Seven in the morning", "Nine in the morning", "Nine in the evening"];
+    const correct = 1;
+
+    document.getElementById('lvlReadQ').textContent = q;
+    const optsEl = document.getElementById('lvlReadOpts');
+    optsEl.innerHTML = '';
+    document.getElementById('lvlReadFeedback').classList.remove('show');
+
+    options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        optsEl.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+        if (i === correct){ btn.classList.add('correct'); lvlScores.reading = 1; }
+        else { btn.classList.add('wrong'); optsEl.children[correct].classList.add('correct'); lvlScores.reading = 0; }
+        const fb = document.getElementById('lvlReadFeedback');
+        fb.textContent = i === correct ? "Correct!" : "Not quite — the correct answer is highlighted above.";
+        fb.classList.add('show');
+        lvlNextBtn.classList.add('show');
+      });
+      optsEl.appendChild(btn);
+    });
+  }
+
+  // --- Speaking ---
+  function initLvlSpeaking(){
+    const sentence = "I am ready to learn and grow every day.";
+    document.getElementById('lvlSpeakSentence').textContent = sentence;
+    const fb = document.getElementById('lvlSpeakFeedback');
+    fb.classList.remove('show');
+    const listenBtn = document.getElementById('lvlListenBtn');
+    const recordBtn = document.getElementById('lvlRecordBtn');
+    recordBtn.textContent = '🎤 Speak now';
+    recordBtn.classList.remove('recording');
+
+    listenBtn.onclick = () => {
+      if (!hasTTS) return;
+      const utter = new SpeechSynthesisUtterance(sentence);
+      utter.lang = 'en-IN'; utter.rate = 0.92;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utter);
+    };
+
+    if (!hasSTT){
+      fb.textContent = "Voice check isn't supported in this browser — skipping this part. Try Chrome for the full experience.";
+      fb.classList.add('show');
+      lvlScores.speaking = null;
+      lvlNextBtn.classList.add('show');
+      recordBtn.style.display = 'none';
+      return;
+    }
+    recordBtn.style.display = 'inline-flex';
+
+    const lvlRecognition = new SpeechRec();
+    lvlRecognition.lang = 'en-IN';
+    lvlRecognition.interimResults = false;
+    lvlRecognition.maxAlternatives = 1;
+
+    recordBtn.onclick = () => {
+      recordBtn.classList.add('recording');
+      recordBtn.textContent = '🎤 Listening…';
+      try{ lvlRecognition.start(); }catch(e){ /* already started */ }
+    };
+
+    lvlRecognition.onresult = (event) => {
+      const said = event.results[0][0].transcript;
+      const target = normalize(sentence);
+      const spoken = normalize(said);
+      const matched = target.filter(w => spoken.includes(w)).length;
+      const ratio = matched / target.length;
+      lvlScores.speaking = ratio >= 0.75 ? 1 : (ratio >= 0.4 ? 0.5 : 0);
+      fb.textContent = `We heard: "${said}"`;
+      fb.classList.add('show');
+      lvlNextBtn.classList.add('show');
+    };
+    lvlRecognition.onend = () => {
+      recordBtn.classList.remove('recording');
+      recordBtn.textContent = '🎤 Speak now';
+    };
+    lvlRecognition.onerror = () => {
+      recordBtn.classList.remove('recording');
+      recordBtn.textContent = '🎤 Speak now';
+      fb.textContent = "Couldn't hear you clearly — check microphone permission and try again.";
+      fb.classList.add('show');
+    };
+  }
+
+  // --- Writing ---
+  function initLvlWriting(){
+    document.getElementById('lvlWritePrompt').textContent = "Write 3–4 sentences in English about your daily routine.";
+    const textEl = document.getElementById('lvlWriteText');
+    textEl.value = '';
+    const fb = document.getElementById('lvlWriteFeedback');
+    fb.classList.remove('show');
+
+    document.getElementById('lvlWriteSubmit').onclick = () => {
+      const text = textEl.value.trim();
+      const wordCount = text.split(/\s+/).filter(Boolean).length;
+      lvlWritingSample = text;
+      lvlScores.writing = wordCount >= 8 ? 1 : 0;
+      fb.textContent = wordCount >= 8
+        ? "Thanks! Your teacher will personally review this when you connect on WhatsApp."
+        : "Noted — try writing a bit more next time for a fuller picture, but you can continue.";
+      fb.classList.add('show');
+      lvlNextBtn.classList.add('show');
+    };
+  }
+
+  // --- Result ---
+  function showLvlResult(){
+    lvlLive.classList.add('hide');
+    lvlResultEl.classList.add('show');
+
+    const skillMeta = [
+      { key: 'listening', icon: '🎧', label: 'Listening' },
+      { key: 'reading', icon: '📖', label: 'Reading' },
+      { key: 'speaking', icon: '🗣️', label: 'Speaking' },
+      { key: 'writing', icon: '✍️', label: 'Writing' }
+    ];
+
+    let total = 0, max = 0;
+    const summaryRow = document.getElementById('lvlSummaryRow');
+    summaryRow.innerHTML = '';
+    skillMeta.forEach(s => {
+      const val = lvlScores[s.key];
+      const item = document.createElement('div');
+      item.className = 'lvl-summary-item';
+      const display = val === null ? 'Skipped' : `${val}/1`;
+      item.innerHTML = `<div class="icon">${s.icon}</div><div class="lbl">${s.label}<br>${display}</div>`;
+      summaryRow.appendChild(item);
+      if (val !== null){ total += val; max += 1; }
+    });
+
+    const pct = max > 0 ? total / max : 0;
+    let level, advice;
+    if (pct >= 0.85){ level = "Intermediate"; advice = "You have a solid base — Interview Skills or Grammar for Academics would suit you well."; }
+    else if (pct >= 0.5){ level = "Elementary"; advice = "Good foundation — Spoken English Basic will help you build real fluency."; }
+    else { level = "Beginner"; advice = "A great starting point — Spoken English Foundation is built exactly for this stage."; }
+
+    document.getElementById('lvlLevelBadge').textContent = level;
+    try{ localStorage.setItem('lvlLevel', level); renderProgress2(); }catch(e){ /* storage unavailable */ }
+    document.getElementById('lvlResultText').textContent = advice;
+
+    document.getElementById('lvlSendReport').onclick = () => {
+      const summaryText = skillMeta.map(s => `${s.label}: ${lvlScores[s.key] === null ? 'Skipped' : lvlScores[s.key] + '/1'}`).join(', ');
+      const writingSnippet = lvlWritingSample ? lvlWritingSample.slice(0, 150) : '(not provided)';
+      const msg = `Hi, I'm ${lvlNameVal} (${lvlPhoneVal}). I completed the free Level Test.\nResult: ${level}\n${summaryText}\nWriting sample: ${writingSnippet}`;
+      window.open(`https://wa.me/919616422712?text=${encodeURIComponent(msg)}`, '_blank');
+    };
+  }
+
+  // ============================================================
+  // TESTIMONIALS — add your real students here
+  // ============================================================
+  // photo: path to an image you've uploaded into the repo, e.g. "images/priya.jpg"
+  //        (leave "" to show an initial-letter icon instead of a photo)
+  // videoId: YouTube video ID for a video testimonial (leave "" for text-only)
+  // Only add real students who've agreed to be featured.
+  // ============================================================
+  const testimonials = [
+    // Example — replace with a real student, or delete this example entirely:
+    // {
+    //   name: "Priya Verma",
+    //   course: "Interview Skills",
+    //   quote: "I got my first job after practicing here for two months.",
+    //   photo: "images/priya.jpg",
+    //   videoId: ""
+    // }
+  ];
+
+  function renderTestimonials(){
+    const grid = document.getElementById('testiGrid');
+    grid.innerHTML = '';
+
+    if (testimonials.length === 0){
+      grid.innerHTML = '<div class="testi-empty-note">Student stories coming soon — check back shortly!</div>';
+      return;
+    }
+
+    testimonials.forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'testi-card';
+
+      const photoHtml = t.photo
+        ? `<img class="testi-photo" src="${t.photo}" alt="${t.name}">`
+        : `<div class="testi-photo-placeholder">${t.name.charAt(0)}</div>`;
+
+      const videoHtml = t.videoId
+        ? `<a class="testi-video-btn" href="https://www.youtube.com/watch?v=${t.videoId}" target="_blank" rel="noopener">&#9654; Watch video story</a>`
+        : '';
+
+      card.innerHTML = `
+        <div class="testi-top">
+          ${photoHtml}
+          <div>
+            <div class="testi-name">${t.name}</div>
+            <div class="testi-course">${t.course}</div>
+          </div>
+        </div>
+        <div class="testi-quote">"${t.quote}"</div>
+        ${videoHtml}
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  renderTestimonials();
+</script>
+
+</body>
+</html>
