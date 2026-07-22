@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unlimited Words — Vocabulary Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --board: #1e3a2c;
+    --board-dark: #16302a;
+    --chalk: #f4efe2;
+    --chalk-dim: #cfd6c9;
+    --yellow: #f2c14e;
+    --coral: #e9694f;
+    --mint: #7fd8a8;
+    --tape: #efe6c8;
+    --card: #fbf8ef;
+    --ink: #2b2b28;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Nunito',sans-serif;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(255,255,255,0.05), transparent 40%),
+      radial-gradient(ellipse at 80% 85%, rgba(255,255,255,0.04), transparent 45%),
+      var(--board);
+    color:var(--chalk);
+    min-height:100vh;
+    padding:28px 16px 60px;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:34px;
+    text-align:center;
+    margin:0 0 4px;
+    letter-spacing:0.5px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  }
+  .subtitle{
+    text-align:center;
+    color:var(--chalk-dim);
+    font-size:14px;
+    margin:0 0 22px;
+    font-style:italic;
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:22px;
+  }
+  .chip{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    padding:7px 16px;
+    border-radius:3px;
+    background:var(--tape);
+    color:var(--ink);
+    border:none;
+    cursor:pointer;
+    transform:rotate(var(--r,0deg));
+    box-shadow:1px 2px 4px rgba(0,0,0,0.25);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .chip:hover{transform:rotate(var(--r,0deg)) translateY(-2px);}
+  .chip.active{
+    background:var(--yellow);
+    box-shadow:1px 3px 6px rgba(0,0,0,0.35);
+  }
+  .scoreboard{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:420px;
+    margin:0 auto 20px;
+    font-family:'Space Mono',monospace;
+    font-size:14px;
+  }
+  .stat{text-align:center;}
+  .stat .num{font-size:22px;font-weight:700;display:block;color:var(--yellow);}
+  .stat .lbl{font-size:11px;color:var(--chalk-dim);text-transform:uppercase;letter-spacing:1px;}
+  .hearts{font-size:18px;letter-spacing:2px;}
+  .card-zone{
+    position:relative;
+    max-width:460px;
+    margin:0 auto 26px;
+    padding-top:14px;
+  }
+  .tape{
+    position:absolute;
+    width:70px;
+    height:26px;
+    background:var(--tape);
+    opacity:0.85;
+    top:-6px;
+    box-shadow:0 2px 4px rgba(0,0,0,0.3);
+  }
+  .tape.left{left:6px;transform:rotate(-8deg);}
+  .tape.right{right:6px;transform:rotate(7deg);}
+  .card{
+    background:var(--card);
+    color:var(--ink);
+    border-radius:6px;
+    padding:34px 26px 28px;
+    text-align:center;
+    box-shadow:0 10px 24px rgba(0,0,0,0.35), 0 2px 0 rgba(0,0,0,0.1) inset;
+    position:relative;
+  }
+  .category-tag{
+    font-family:'Baloo 2',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    color:#7a7460;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-bottom:10px;
+  }
+  .emoji{font-size:56px;margin-bottom:8px;line-height:1;}
+  .word{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:40px;
+    margin:6px 0 2px;
+    color:var(--board);
+    border-bottom:3px dashed #d8cfa8;
+    display:inline-block;
+    padding-bottom:6px;
+  }
+  .prompt{
+    font-size:14px;
+    color:#8a8470;
+    margin-top:14px;
+    font-weight:700;
+  }
+  .options{
+    max-width:460px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  .opt{
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    background:var(--card);
+    color:var(--ink);
+    border:none;
+    border-radius:8px;
+    padding:16px 12px;
+    cursor:pointer;
+    box-shadow:0 4px 0 #cfc7a8;
+    transition:transform 0.08s ease, box-shadow 0.08s ease;
+    text-align:left;
+    line-height:1.35;
+  }
+  .opt:hover:not(:disabled){transform:translateY(-2px);}
+  .opt:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 #cfc7a8;}
+  .opt:disabled{cursor:default;}
+  .opt.correct{background:var(--mint);box-shadow:0 4px 0 #4fae76;}
+  .opt.wrong{background:var(--coral);color:#fff;box-shadow:0 4px 0 #b8442f;}
+  .feedback{
+    text-align:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    height:26px;
+    margin-top:16px;
+    color:var(--yellow);
+  }
+  .end-screen{
+    text-align:center;
+    max-width:420px;
+    margin:60px auto 0;
+  }
+  .end-screen .big{
+    font-family:'Baloo 2',sans-serif;
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:8px;
+  }
+  .restart{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    background:var(--yellow);
+    color:var(--ink);
+    border:none;
+    border-radius:8px;
+    padding:14px 28px;
+    margin-top:18px;
+    cursor:pointer;
+    box-shadow:0 4px 0 #b8912e;
+  }
+  .restart:active{transform:translateY(2px);box-shadow:0 1px 0 #b8912e;}
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+  @media(max-width:420px){
+    .word{font-size:32px;}
+    .options{grid-template-columns:1fr;}
+    h1{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2 class="sr-only">Unlimited Words vocabulary game with unlimited multiple-choice rounds across categories, tracking score and streak.</h2>
+  <h1>Unlimited Words</h1>
+  <p class="subtitle">pick the meaning &mdash; keep your streak alive</p>
+
+  <div class="chips" id="chips"></div>
+
+  <div class="scoreboard">
+    <div class="stat"><span class="num" id="scoreNum">0</span><span class="lbl">score</span></div>
+    <div class="stat"><span class="num" id="streakNum">0</span><span class="lbl">streak</span></div>
+    <div class="stat"><span class="hearts" id="hearts">&#9829;&#9829;&#9829;</span><span class="lbl">lives</span></div>
+  </div>
+
+  <div id="gameArea">
+    <div class="card-zone">
+      <div class="tape left"></div>
+      <div class="tape right"></div>
+      <div class="card">
+        <div class="category-tag" id="categoryTag">animals</div>
+        <div class="emoji" id="emoji">&#128021;</div>
+        <div class="word" id="wordText">cow</div>
+        <div class="prompt">what does this word mean?</div>
+      </div>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <div class="end-screen" id="endScreen" style="display:none;">
+    <div class="big">Game over!</div>
+    <p id="endSummary">You scored 0 points.</p>
+    <button class="restart" id="restartBtn">Play again</button>
+  </div>
+</div>
+
+<script>
+const WORDS = [
+  {w:"cow",m:"a large farm animal that gives milk",e:"🐄",c:"animals"},
+  {w:"dog",m:"a common pet animal that barks",e:"🐕",c:"animals"},
+  {w:"cat",m:"a small pet animal that says meow",e:"🐈",c:"animals"},
+  {w:"bird",m:"an animal with feathers and wings that can fly",e:"🐦",c:"animals"},
+  {w:"fish",m:"an animal that lives and swims in water",e:"🐟",c:"animals"},
+  {w:"rabbit",m:"a small animal with long ears that hops",e:"🐇",c:"animals"},
+  {w:"horse",m:"a large animal people ride on",e:"🐎",c:"animals"},
+  {w:"elephant",m:"a very large animal with a long nose",e:"🐘",c:"animals"},
+  {w:"lion",m:"a large wild cat known as the king of animals",e:"🦁",c:"animals"},
+  {w:"sheep",m:"a farm animal covered in soft wool",e:"🐑",c:"animals"},
+  {w:"duck",m:"a bird that swims on water and says quack",e:"🦆",c:"animals"},
+  {w:"monkey",m:"an animal that climbs trees and looks like a small person",e:"🐒",c:"animals"},
+
+  {w:"apple",m:"a round fruit, often red or green",e:"🍎",c:"food"},
+  {w:"bread",m:"a food made from flour, eaten at meals",e:"🍞",c:"food"},
+  {w:"rice",m:"small white grains eaten as food",e:"🍚",c:"food"},
+  {w:"milk",m:"a white drink that comes from cows",e:"🥛",c:"food"},
+  {w:"egg",m:"a food that comes from a chicken",e:"🥚",c:"food"},
+  {w:"banana",m:"a long yellow fruit",e:"🍌",c:"food"},
+  {w:"cheese",m:"a food made from milk",e:"🧀",c:"food"},
+  {w:"soup",m:"a liquid food eaten hot with a spoon",e:"🍲",c:"food"},
+  {w:"cake",m:"a sweet baked food eaten at parties",e:"🍰",c:"food"},
+  {w:"water",m:"a clear liquid that people drink",e:"💧",c:"food"},
+  {w:"honey",m:"a sweet, sticky food made by bees",e:"🍯",c:"food"},
+  {w:"orange",m:"a round orange-colored fruit",e:"🍊",c:"food"},
+
+  {w:"mother",m:"a female parent",e:"👩",c:"family"},
+  {w:"father",m:"a male parent",e:"👨",c:"family"},
+  {w:"sister",m:"a girl who has the same parents as you",e:"👧",c:"family"},
+  {w:"brother",m:"a boy who has the same parents as you",e:"👦",c:"family"},
+  {w:"baby",m:"a very young child",e:"👶",c:"family"},
+  {w:"grandmother",m:"the mother of your mother or father",e:"👵",c:"family"},
+  {w:"grandfather",m:"the father of your mother or father",e:"👴",c:"family"},
+  {w:"family",m:"a group of people who are related to each other",e:"👨‍👩‍👧",c:"family"},
+  {w:"friend",m:"a person you like and enjoy spending time with",e:"🧑‍🤝‍🧑",c:"family"},
+  {w:"neighbor",m:"a person who lives near you",e:"🏠",c:"family"},
+
+  {w:"book",m:"pages with words that you read",e:"📖",c:"school"},
+  {w:"pen",m:"a tool used for writing with ink",e:"🖊️",c:"school"},
+  {w:"pencil",m:"a tool used for writing or drawing",e:"✏️",c:"school"},
+  {w:"teacher",m:"a person who helps students learn",e:"🧑‍🏫",c:"school"},
+  {w:"student",m:"a person who is learning at school",e:"🎓",c:"school"},
+  {w:"classroom",m:"a room where lessons happen at school",e:"🏫",c:"school"},
+  {w:"homework",m:"schoolwork that students do at home",e:"📝",c:"school"},
+  {w:"question",m:"something you ask to get information",e:"❓",c:"school"},
+  {w:"answer",m:"a reply to a question",e:"✅",c:"school"},
+  {w:"bag",m:"something used to carry books and things",e:"🎒",c:"school"},
+
+  {w:"run",m:"to move very fast using your legs",e:"🏃",c:"actions"},
+  {w:"walk",m:"to move by putting one foot in front of the other",e:"🚶",c:"actions"},
+  {w:"jump",m:"to push your body up into the air",e:"🤸",c:"actions"},
+  {w:"eat",m:"to put food in your mouth and swallow it",e:"🍽️",c:"actions"},
+  {w:"sleep",m:"to close your eyes and rest at night",e:"😴",c:"actions"},
+  {w:"read",m:"to look at words and understand them",e:"📚",c:"actions"},
+  {w:"write",m:"to make letters or words on paper",e:"✍️",c:"actions"},
+  {w:"swim",m:"to move through water using your arms and legs",e:"🏊",c:"actions"},
+  {w:"sing",m:"to make music with your voice",e:"🎤",c:"actions"},
+  {w:"dance",m:"to move your body to music",e:"💃",c:"actions"},
+  {w:"laugh",m:"to make a sound because something is funny",e:"😂",c:"actions"},
+  {w:"cry",m:"to make tears because you are sad",e:"😢",c:"actions"},
+
+  {w:"sun",m:"the bright star that gives us light and heat",e:"☀️",c:"nature"},
+  {w:"moon",m:"the object we see in the sky at night",e:"🌙",c:"nature"},
+  {w:"tree",m:"a tall plant with a trunk, branches, and leaves",e:"🌳",c:"nature"},
+  {w:"flower",m:"the colorful part of a plant",e:"🌸",c:"nature"},
+  {w:"rain",m:"water that falls from clouds in the sky",e:"🌧️",c:"nature"},
+  {w:"cloud",m:"a white or gray shape in the sky made of water",e:"☁️",c:"nature"},
+  {w:"mountain",m:"a very tall, high piece of land",e:"⛰️",c:"nature"},
+  {w:"river",m:"a long line of water that flows to the sea",e:"🏞️",c:"nature"},
+  {w:"beach",m:"a sandy area next to the sea",e:"🏖️",c:"nature"},
+  {w:"star",m:"a small bright light seen in the night sky",e:"⭐",c:"nature"},
+  {w:"snow",m:"soft white flakes that fall in cold weather",e:"❄️",c:"nature"},
+  {w:"wind",m:"air that moves and can be felt on your skin",e:"🌬️",c:"nature"},
+
+  {w:"happy",m:"feeling good or pleased",e:"😀",c:"feelings"},
+  {w:"sad",m:"feeling unhappy",e:"😔",c:"feelings"},
+  {w:"angry",m:"feeling strong displeasure, ready to shout",e:"😠",c:"feelings"},
+  {w:"tired",m:"needing rest or sleep",e:"🥱",c:"feelings"},
+  {w:"scared",m:"feeling afraid of something",e:"😨",c:"feelings"},
+  {w:"excited",m:"feeling very happy about something that will happen",e:"🤩",c:"feelings"},
+  {w:"proud",m:"feeling pleased about something you did well",e:"😌",c:"feelings"},
+  {w:"surprised",m:"feeling shocked by something unexpected",e:"😲",c:"feelings"},
+  {w:"bored",m:"feeling tired because nothing interesting is happening",e:"😑",c:"feelings"},
+  {w:"nervous",m:"feeling worried about something that might happen",e:"😬",c:"feelings"}
+];
+
+const CATEGORIES = ["all","animals","food","family","school","actions","nature","feelings"];
+let activeCategory = "all";
+let pool = [];
+let currentCorrect = "";
+let score = 0, streak = 0, lives = 3, locked = false;
+
+const chipsEl = document.getElementById('chips');
+const rotations = [-3,2,-1,3,-2,1,2,-3];
+CATEGORIES.forEach((cat,i)=>{
+  const b = document.createElement('button');
+  b.className = 'chip' + (cat==='all' ? ' active' : '');
+  b.style.setProperty('--r', rotations[i%rotations.length]+'deg');
+  b.textContent = cat;
+  b.onclick = ()=>{
+    activeCategory = cat;
+    [...chipsEl.children].forEach(c=>c.classList.remove('active'));
+    b.classList.add('active');
+    resetGame();
+  };
+  chipsEl.appendChild(b);
+});
+
+function shuffle(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function buildPool(){
+  const base = activeCategory==='all' ? WORDS : WORDS.filter(x=>x.c===activeCategory);
+  pool = shuffle(base);
+}
+
+function nextQuestion(){
+  if(pool.length===0) buildPool();
+  const item = pool.pop();
+  currentCorrect = item.m;
+  document.getElementById('categoryTag').textContent = item.c;
+  document.getElementById('emoji').textContent = item.e;
+  document.getElementById('wordText').textContent = item.w;
+  document.getElementById('feedback').textContent = '';
+
+  const sameCategoryWords = WORDS.filter(x=>x.c===item.c && x.w!==item.w);
+  const distractors = shuffle(sameCategoryWords).slice(0,3).map(x=>x.m);
+  while(distractors.length<3){
+    const extra = shuffle(WORDS.filter(x=>x.w!==item.w && !distractors.includes(x.m) && x.m!==item.m))[0];
+    if(extra) distractors.push(extra.m); else break;
+  }
+  const options = shuffle([item.m, ...distractors]);
+
+  const optsEl = document.getElementById('options');
+  optsEl.innerHTML = '';
+  locked = false;
+  options.forEach(optText=>{
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.textContent = optText;
+    btn.onclick = ()=>handleAnswer(btn, optText);
+    optsEl.appendChild(btn);
+  });
+}
+
+function handleAnswer(btn, chosen){
+  if(locked) return;
+  locked = true;
+  const allOpts = [...document.getElementById('options').children];
+  if(chosen === currentCorrect){
+    btn.classList.add('correct');
+    score += 10 + streak*2;
+    streak += 1;
+    document.getElementById('feedback').textContent = 'nice! correct answer';
+  } else {
+    btn.classList.add('wrong');
+    allOpts.forEach(o=>{ if(o.textContent===currentCorrect) o.classList.add('correct'); });
+    streak = 0;
+    lives -= 1;
+    document.getElementById('feedback').textContent = 'not quite — the right meaning is highlighted';
+  }
+  allOpts.forEach(o=>o.disabled = true);
+  updateStats();
+  setTimeout(()=>{
+    if(lives<=0){ showEndScreen(); } else { nextQuestion(); }
+  }, 1100);
+}
+
+function updateStats(){
+  document.getElementById('scoreNum').textContent = score;
+  document.getElementById('streakNum').textContent = streak;
+  document.getElementById('hearts').innerHTML = '&#9829;'.repeat(Math.max(lives,0)) + '&#9825;'.repeat(3-Math.max(lives,0));
+}
+
+function showEndScreen(){
+  document.getElementById('gameArea').style.display = 'none';
+  document.getElementById('endScreen').style.display = 'block';
+  document.getElementById('endSummary').textContent = `You scored ${score} points with a best streak feel of ${streak}. Ready to try again?`;
+}
+
+function resetGame(){
+  score = 0; streak = 0; lives = 3;
+  document.getElementById('gameArea').style.display = 'block';
+  document.getElementById('endScreen').style.display = 'none';
+  updateStats();
+  buildPool();
+  nextQuestion();
+}
+
+document.getElementById('restartBtn').onclick = resetGame;
+
+resetGame();
+</script>
+</body>
+</html>
